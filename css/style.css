@@ -76,6 +76,13 @@ nav a{
 }
 
 /* SECTION 1 */
+
+
+   hr {
+    border: none;
+    border-top: 2px solid #DFD5C8;
+}
+
 .section1 img{
 height: 628px;
 width: 716px;
@@ -108,6 +115,7 @@ margin-top: 4rem;
     padding: 3rem;
     justify-content: center;
     gap: 2rem;
+    background-color: #FAF7F0;
 }
 
 .change1 > div {
@@ -224,5 +232,45 @@ font-family: 'DM Sans', sans-serif;
 .part2 p:last-of-type {
     color: #796A59;
     margin-top: 1rem;
+}
+
+/*  SECTION 2 de prix rassemeble addition */
+
+.section2{
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem;
+}
+
+.sectioninfo pre{
+font-family: 'DM Sans', sans-serif;
+font-weight: 600;
+font-size: 1.2rem;
+color: #796A59;
+}
+
+.resume-prix p{
+font-family: 'DM Sans', sans-serif;
+font-weight: 500;
+font-size: 3rem;
+color: #30291F;
+}
+
+.section2 button{
+    height: 56px;
+    width: 300px;
+    color: white;
+    background-color:#394B32;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    border-style: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.section2 button > span{
+  position: relative;
+  top: 2px;
 }
 
