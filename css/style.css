@@ -1,125 +1,125 @@
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
 
-  html{
-       font-size: 16px;
-    }
+html {
+    font-size: 16px;
+}
 
-*{
+:root {
+    --vert: #394B32;
+    --beige: #FAF7F0;
+    --marron: #30291F;
+    --gris: #796A59;
+    --blanc: #FFFFFF;
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
-.haut{
-background-color: #394B32;
+.haut {
+    background-color: var(--vert);
 }
 
-.haut p{
-    color: white;
+.haut p {
+    color: var(--blanc);
     text-align: center;
-     font-family: "Inter", sans-serif;
-     padding: 15px;
-     font-weight: 700;
+    font-family: "Inter", sans-serif;
+    padding: 15px;
+    font-weight: 700;
 }
 
-header{
+header {
     display: flex;
-    background-color: #FAF7F0;
+    background-color: var(--beige);
     justify-content: space-around;
-
-    
 }
 
-header div{
+header div {
     display: flex;
-    background-color: #FAF7F0;
+    background-color: var(--beige);
     align-items: center;
     gap: 1rem;
     padding: 20px;
 }
-header h1{
-font-family: 'Playfair Display', serif;
-font-weight: 500;
-font-size: 2.62rem;
-color: #30291F;
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-size: 2.62rem;
+    color: var(--marron);
 }
 
-.logo i{
-    color: #30291F;
-   font-size: 3rem;
-
+.logo i {
+    color: var(--marron);
+    font-size: 3rem;
 }
 
-header img{
+header img {
     height: 45px;
     width: 260px;
 }
 
 nav {
-display: flex;
-gap: 2rem;
+    display: flex;
+    gap: 2rem;
 }
 
-nav a{
+nav a {
     text-decoration: none;
-    color: #796A59;
+    color: var(--gris);
     font-family: 'DM Sans', sans-serif;
     font-weight: 800;
     font-size: 1.2rem;
 }
 
-
-.panier i{
-    color: #394B32;
+.panier i {
+    color: var(--vert);
     font-size: 2rem;
 }
 
 /* SECTION 1 */
 
-
-   hr {
+hr {
     border: none;
     border-top: 2px solid #DFD5C8;
 }
 
-.section1 img{
-height: 628px;
-width: 716px;
- border-radius: 10px;
- margin-left: 5rem;
+.section1 img {
+    height: 628px;
+    width: 716px;
+    border-radius: 10px;
+    margin-left: 5rem;
 }
 
-.divimagedesc{
+.divimagedesc {
     border-radius: 10px;
     height: 750px;
     width: 50%;
     background-color: #E8DBC7;
 }
 
-.divimagedesc span{
-display: flex;
-justify-content: space-between;
-font-family: 'DM Sans', sans-serif;
-padding: 1rem;
-font-weight: 600;
-font-size: 0.75rem;
-color: #796A59;
-margin-top: 4rem;
-
+.divimagedesc span {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'DM Sans', sans-serif;
+    padding: 1rem;
+    font-weight: 600;
+    font-size: 0.75rem;
+    color: var(--gris);
+    margin-top: 4rem;
 }
 
-
-.section1{
+.section1 {
     display: flex;
     padding: 3rem;
     justify-content: center;
     gap: 2rem;
-    background-color: #FAF7F0;
+    background-color: var(--beige);
 }
 
 .change1 > div {
@@ -127,73 +127,72 @@ margin-top: 4rem;
     padding: 10px;
 }
 
-.change1 pre{
+.change1 pre {
     font-family: 'DM Sans', sans-serif;
     font-size: 0.81;
 }
 
-.persorec :first-child{
-    color: #394B32;
+.persorec :first-child {
+    color: var(--vert);
 }
 
-.persorec :last-child{
-    color: #796A59;
-    
+.persorec :last-child {
+    color: var(--gris);
 }
 
-
-.change1 > h6{
-font-family: 'DM Sans', sans-serif;
-font-weight: 500;
-font-size: 1rem;
-color: #394B32;
+.change1 > h6 {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--vert);
 }
 
-.change1 > h2{
-font-family: 'Playfair Display', serif;
-font-weight: 500;
-font-size: 3rem;
-color: #30291F;
+.change1 > h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-size: 3rem;
+    color: var(--marron);
 }
 
-.change1 p{
-font-family: 'DM Sans', sans-serif;
-font-weight: 600;
-font-size: 0.87rem;
-color: #796A59;
+.change1 p {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.87rem;
+    color: var(--gris);
 }
 
-
-.section1 label{
-font-family: 'DM Sans', sans-serif;
-font-weight: 700;
-font-size: 0.87rem;
-color: #30291F;
+.section1 label {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 0.87rem;
+    color: var(--marron);
 }
 
-
-.choises1 input{
+.choises1 input {
     display: flex;
     flex-direction: row;
 }
-.titre{
+
+.titre {
     display: flex;
     justify-content: space-between;
     margin-bottom: 12px;
     margin-top: 20px;
 }
-.titre span{
-color: #796A59;
-font-family: 'DM Sans', sans-serif;
-font-weight: 600;
-font-size: 0.75rem;
+
+.titre span {
+    color: var(--gris);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.75rem;
 }
 
-.options{
+.options {
     display: flex;
     gap: 18px;
 }
-.carte{
+
+.carte {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -204,7 +203,7 @@ font-size: 0.75rem;
     border-color: #e2d6c8;
     border-width: 2px;
     border-radius: 18px;
-    background: white;
+    background: var(--blanc);
     cursor: pointer;
 }
 
@@ -213,16 +212,16 @@ font-size: 0.75rem;
 }
 
 .carte span:first-of-type {
-font-family: 'DM Sans', sans-serif;
-font-weight: 700;
-font-size: 1.12rem;
-color: #30291F;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.12rem;
+    color: var(--marron);
 }
 
-.carte span:last-of-type{
-font-size: 1rem;
-color: #796A59;
-font-family: 'DM Sans', sans-serif;
+.carte span:last-of-type {
+    font-size: 1rem;
+    color: var(--gris);
+    font-family: 'DM Sans', sans-serif;
 }
 
 .carte:has(input:checked) {
@@ -230,44 +229,45 @@ font-family: 'DM Sans', sans-serif;
     border-color: #40543a;
     border-width: 3px;
 }
+
 .carte:has(input:checked) span:first-of-type::before {
     content: "✓";
     margin-right: 10px;
 }
 
 .part2 p:last-of-type {
-    color: #796A59;
+    color: var(--gris);
     margin-top: 1rem;
 }
 
-/*  SECTION 2 de prix rassemeble addition */
+/* SECTION 2 de prix rassemble addition */
 
-.section2{
-    background-color: white;
+.section2 {
+    background-color: var(--blanc);
     display: flex;
     justify-content: space-between;
     padding: 2rem;
 }
 
-.sectioninfo pre{
-font-family: 'DM Sans', sans-serif;
-font-weight: 600;
-font-size: 1.2rem;
-color: #796A59;
+.sectioninfo pre {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--gris);
 }
 
-.resume-prix p{
-font-family: 'DM Sans', sans-serif;
-font-weight: 500;
-font-size: 2rem;
-color: #30291F;
+.resume-prix p {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 2rem;
+    color: var(--marron);
 }
 
-.section2 button{
+.section2 button {
     height: 56px;
     width: 250px;
-    color: white;
-    background-color:#394B32;
+    color: var(--blanc);
+    background-color: var(--vert);
     font-family: 'DM Sans', sans-serif;
     font-size: 1.2rem;
     font-weight: 700;
@@ -275,86 +275,277 @@ color: #30291F;
     border-radius: 8px;
     cursor: pointer;
 }
-.section2 button > span{
-  position: relative;
-  top: 2px;
+
+.section2 button > span {
+    position: relative;
+    top: 2px;
 }
 
+/* SECTION 3 */
 
-
-/* daba section 3 */
-
-footer{
-    background-color: #FAF7F0;
+footer {
+    background-color: var(--beige);
     display: flex;
     justify-content: space-between;
     padding: 2rem;
 }
 
-footer p{
-    color: #796A59;
+footer p {
+    color: var(--gris);
     font-family: 'DM Sans', sans-serif;
     font-size: 0.75rem;
     font-weight: 800;
 }
 
-
 @media only screen and (max-width: 700px) {
 
-
-    html{
-       font-size: 12px;
+    html {
+        font-size: 12px;
     }
 
-    .haut , nav{
+    .haut, nav {
         display: none;
     }
 
-    .logo i , .panier i , .logo h1{
+    .logo i, .panier i, .logo h1 {
         font-size: 1.5rem;
     }
 
-    header{
+    header {
         width: 100%;
     }
 
-    .section1{
+    .section1 {
         width: 100%;
         display: flex;
         flex-direction: column;
         padding: 0;
     }
 
-    .divimagedesc{
+    .divimagedesc {
         width: 100%;
         height: 450px;
-        background-color: #FAF7F0;
-    }
-    .divimagedesc img{
-      width: 100%;
-      height: 500px;
-       margin: 0;
-       padding: 20px;
-       border-radius: 3rem;
-    }
- .divimagedesc p{
-    display: none;
- }
-    .part2{
-        padding: 12px;
+        background-color: var(--beige);
     }
 
-    pre{
+    .divimagedesc img {
+        width: 100%;
+        height: 500px;
+        margin: 0;
+        padding: 20px;
+        border-radius: 3rem;
+    }
+
+    .divimagedesc p {
         display: none;
     }
 
-    .section2{
+    .part2 {
+        padding: 12px;
+    }
+
+    pre {
+        display: none;
+    }
+
+    .section2 {
         display: flex;
         align-items: center;
     }
-    
 
-    
 
+    .tout-order{
+        display: flex;
+        flex-direction: column;
+    }
 
 }
+
+
+/* css pour section 3 changable  */
+
+.tout-order {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: var(--beige);
+}
+
+
+
+.image-text-cafe {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
+}
+.image-text-cafe div{
+    margin-left: 1rem;
+}
+
+
+
+.image-cafe img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+
+
+.signature {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.signature h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--marron);
+}
+
+.signature p {
+    margin-top: 0.4rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    color: var(--gris);
+}
+
+.signature a {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    color: var(--vert);
+}
+
+
+
+.carte-menu {
+    margin-top: 5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 1rem;
+    background-color: var(--blanc);
+    border: 1px solid #E2D6C8;
+    border-radius: 16px;
+}
+
+
+
+.statut {
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 0.8rem;
+    border-radius: 20px;
+    background-color: #E9EDDC;
+    color: var(--vert);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+}
+
+
+
+.carte-menu h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--marron);
+}
+
+.quantite {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    color: var(--gris);
+}
+
+
+.carte-menu hr {
+    width: 100%;
+    border: none;
+    border-top: 1px solid #E2D6C8;
+}
+
+
+
+.ligne-prix {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    color: var(--gris);
+}
+
+.ligne-prix span:last-child {
+    color: var(--marron);
+    white-space: nowrap;
+}
+
+
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--marron);
+}
+
+.total strong {
+    font-size: 1.5rem;
+}
+
+
+
+.information {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    color: var(--gris);
+}
+
+
+
+.bouton-nouveau {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.7rem;
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--vert);
+    color: var(--blanc);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.bouton-nouveau:hover {
+    background-color: #293824;
+}
+
+
+
+.message {
+    display: flex;
+    gap: 0.6rem;
+    padding: 0.8rem;
+    border-radius: 8px;
+    background-color: #E9EDDC;
+    color: var(--gris);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+}
+
+
