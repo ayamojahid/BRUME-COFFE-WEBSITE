@@ -4,6 +4,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
 
+  html{
+       font-size: 16px;
+    }
+
 *{
     margin: 0;
     padding: 0;
@@ -41,7 +45,7 @@ header div{
 header h1{
 font-family: 'Playfair Display', serif;
 font-weight: 500;
-font-size: 42px;
+font-size: 2.62rem;
 color: #30291F;
 }
 
@@ -103,7 +107,7 @@ justify-content: space-between;
 font-family: 'DM Sans', sans-serif;
 padding: 1rem;
 font-weight: 600;
-font-size: 12px;
+font-size: 0.75rem;
 color: #796A59;
 margin-top: 4rem;
 
@@ -112,7 +116,7 @@ margin-top: 4rem;
 
 .section1{
     display: flex;
-    padding: 3²rem;
+    padding: 3rem;
     justify-content: center;
     gap: 2rem;
     background-color: #FAF7F0;
@@ -125,7 +129,7 @@ margin-top: 4rem;
 
 .change1 pre{
     font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
+    font-size: 0.81;
 }
 
 .persorec :first-child{
@@ -134,27 +138,28 @@ margin-top: 4rem;
 
 .persorec :last-child{
     color: #796A59;
+    
 }
 
 
 .change1 > h6{
 font-family: 'DM Sans', sans-serif;
 font-weight: 500;
-font-size: 17px;
+font-size: 1rem;
 color: #394B32;
 }
 
 .change1 > h2{
 font-family: 'Playfair Display', serif;
 font-weight: 500;
-font-size: 48px;
+font-size: 3rem;
 color: #30291F;
 }
 
 .change1 p{
 font-family: 'DM Sans', sans-serif;
 font-weight: 600;
-font-size: 14px;
+font-size: 0.87rem;
 color: #796A59;
 }
 
@@ -162,7 +167,7 @@ color: #796A59;
 .section1 label{
 font-family: 'DM Sans', sans-serif;
 font-weight: 700;
-font-size: 14px;
+font-size: 0.87rem;
 color: #30291F;
 }
 
@@ -181,7 +186,7 @@ color: #30291F;
 color: #796A59;
 font-family: 'DM Sans', sans-serif;
 font-weight: 600;
-font-size: 12px;
+font-size: 0.75rem;
 }
 
 .options{
@@ -210,12 +215,12 @@ font-size: 12px;
 .carte span:first-of-type {
 font-family: 'DM Sans', sans-serif;
 font-weight: 700;
-font-size: 18px;
+font-size: 1.12rem;
 color: #30291F;
 }
 
 .carte span:last-of-type{
-font-size: 16px;
+font-size: 1rem;
 color: #796A59;
 font-family: 'DM Sans', sans-serif;
 }
@@ -241,7 +246,7 @@ font-family: 'DM Sans', sans-serif;
     background-color: white;
     display: flex;
     justify-content: space-between;
-    padding: 3rem;
+    padding: 2rem;
 }
 
 .sectioninfo pre{
@@ -254,17 +259,17 @@ color: #796A59;
 .resume-prix p{
 font-family: 'DM Sans', sans-serif;
 font-weight: 500;
-font-size: 3rem;
+font-size: 2rem;
 color: #30291F;
 }
 
 .section2 button{
     height: 56px;
-    width: 300px;
+    width: 250px;
     color: white;
     background-color:#394B32;
     font-family: 'DM Sans', sans-serif;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 700;
     border-style: none;
     border-radius: 8px;
@@ -289,8 +294,67 @@ footer{
 footer p{
     color: #796A59;
     font-family: 'DM Sans', sans-serif;
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: 800;
 }
 
 
+@media only screen and (max-width: 700px) {
+
+
+    html{
+       font-size: 12px;
+    }
+
+    .haut , nav{
+        display: none;
+    }
+
+    .logo i , .panier i , .logo h1{
+        font-size: 1.5rem;
+    }
+
+    header{
+        width: 100%;
+    }
+
+    .section1{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .divimagedesc{
+        width: 100%;
+        height: 450px;
+        background-color: #FAF7F0;
+    }
+    .divimagedesc img{
+      width: 100%;
+      height: 500px;
+       margin: 0;
+       padding: 20px;
+       border-radius: 3rem;
+    }
+ .divimagedesc p{
+    display: none;
+ }
+    .part2{
+        padding: 12px;
+    }
+
+    pre{
+        display: none;
+    }
+
+    .section2{
+        display: flex;
+        align-items: center;
+    }
+    
+
+    
+
+
+}
