@@ -5,7 +5,11 @@ const PrixTotal = document.getElementById("prix-total");
 
 const BoutonPanier =document.getElementById("ajouter-panier");
 
+
+
+
 document.addEventListener("DOMContentLoaded" , Remplir);
+
 
 
 
@@ -43,7 +47,7 @@ function Remplir() {
     <div class="options">
        <label class="carte" for="taille-s">
     <input type="radio" id="taille-s" name="taille" value="${0}">
-    <span>${config.taille.l.name}</span>
+    <span>${config.taille.s.name}</span>
     <span>Inclus</span>
 </label>
 <label class="carte" for="taille-m">
@@ -53,8 +57,8 @@ function Remplir() {
 </label>
 <label class="carte" for="taille-l">
     <input type="radio" id="taille-l" name="taille" value="${config.taille.l.price}">
-    <span>${config.taille.s.name}</span>
-    <span>${config.taille.s.price}DH</span>
+    <span>${config.taille.l.name}</span>
+    <span>${config.taille.l.price}DH</span>
 </label>
     </div>
 </div>
@@ -103,6 +107,11 @@ function Remplir() {
 </div>
     `;
 
+const options = document.querySelectorAll("#options-container input");
+options.forEach(function(opt) {
+    opt.addEventListener("change" , CalculePrix);
+})
+
 
 
 }
@@ -110,30 +119,13 @@ function Remplir() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const config = {
   base: {
-    espresso: { name: "Espresso", price: 20 },
+    espresso: { name: "Espresso", price: 18 },
     filtre: { name: "Filtre", price: 16 }
   },
   taille: {
-    s: { name: "S · 150 ml", price: 4 },
+    s: { name: "S · 150 ml", price: 0 },
     m: { name: "M · 250 ml", price: 4 },
     l: { name: "L · 350 ml", price: 8 }
   },
@@ -147,3 +139,44 @@ const config = {
     vanille: { name: "Vanille", price: 3 }
   }
 };
+
+
+let reserve = [];
+let totalPrix = 0;
+
+function CalculePrix() {
+   
+
+     const choix = document.querySelectorAll("#options-container input:checked");
+
+            
+          totalPrix=0;
+          reserve =[];
+
+      choix.forEach(function(opt)  {
+        
+
+   
+        
+    const nom = opt.id;
+    const categorie = opt.name;
+    const prix = Number(opt.value);
+  
+
+        totalPrix+=prix;
+
+        reserve.push(
+            {
+               categorie: categorie,
+               nom: nom,
+               prix: prix
+            }
+        )
+
+
+        PrixTotal.textContent=totalPrix   + "DH";
+
+        console.log(reserve);
+      })
+}
+

@@ -570,3 +570,9 @@ footer p {
     justify-content: space-between;
     align-items: center;
 }
+
+
+
+.section3{
+    display: none;
+}

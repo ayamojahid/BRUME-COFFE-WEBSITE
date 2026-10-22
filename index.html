@@ -8,7 +8,7 @@
 
     
 
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 <script src="javascript/main.js" defer ></script>
 </head>
@@ -53,7 +53,7 @@
     <hr class="Ligne">
 
     <!-- SECTION 1 -->
-    <section class="section1">
+    <section class="section1" id="section1">
 
         <div class="divimagedesc">
          <img src="assets/images/picSECTION1.png"    alt="photo de cafe">
@@ -76,6 +76,94 @@
 </div>
 
 <div class="allchoices" id="options-container">
+
+<!-- 
+        <div class="choises1">
+    <div class="titre">
+        <label>01 La base</label>
+        <span>Choix unique</span>
+    </div>
+    <div class="options">
+        <label class="carte" for="Espresso">
+            <input  type="radio" id="Espresso" name="base"  >
+            <span class="base-espresso-name"  ></span>
+            <span class="base-espresso-price" ></span>
+        </label>
+        <label class="carte" for="Filtre">
+            <input type="radio" id="Filtre" name="base"  >
+            <span class="base-filtre-name"></span>
+            <span class="base-filtre-price" ></span>
+        </label>
+    </div>
+</div>
+
+
+<div class="choix2">
+    <div class="titre">
+        <label>02 La taille</label>
+        <span>Choix unique</span>
+    </div>
+    <div class="options">
+       <label class="carte" for="taille-s">
+    <input type="radio" id="taille-s" name="taille" >
+    <span class="taille-s-name"></span>
+    <span class="taille-s-price" ></span>
+</label>
+<label class="carte" for="taille-m">
+    <input type="radio" id="taille-m" name="taille"   >
+    <span class="taille-m-name"></span>
+    <span class="taille-m-price">DH</span>
+</label>
+<label class="carte" for="taille-l">
+    <input type="radio" id="taille-l" name="taille" >
+    <span class="taille-m-name"></span>
+    <span class="taille-m-price"></span>
+</label>
+    </div>
+</div>
+
+<div class="choix3">
+    <div class="titre">
+        <label>03 Le lait</label>
+        <span>Choix unique</span>
+    </div>
+    <div class="options">
+        <label class="carte" for="lait-vache">
+    <input type="radio" id="lait-vache" name="lait" >
+    <span class="lait-vache-name"></span>
+    <span class="lait-vache-price"></span>
+        </label>
+<label class="carte" for="lait-avoine">
+    <input type="radio" id="lait-avoine" name="lait"   >
+    <span class="lait-avoine-name"></span>
+    <span class="lait-avoine-price">DH</span>
+</label>
+<label class="carte" for="lait-amande">
+    <input type="radio" id="lait-amande" name="lait"  >
+    <span class="lait-amande-name"></span>
+    <span class="lait-amande-price">DH</span>
+</label>
+    </div>
+</div>
+
+<div class="choix4">
+    <div class="titre">
+        <label>04 La touche en plus</label>
+        <span>Plusieurs choix</span>
+    </div>
+    <div class="options">
+        <label class="carte" for="Caramel">
+            <input type="checkbox" id="Caramel" name="supplements"  >
+            <span class="supplements-caramel-name"></span>
+            <span class="supplements-caramel-price">DH</span>
+        </label>
+        <label class="carte" for="Vanille">
+            <input type="checkbox" id="Vanille" name="supplements" >
+            <span class="supplements-vanille-name"></span>
+            <span class="supplements-caramel-price">DH</span>
+        </label>
+    </div>
+</div> -->
 
 </div>
 
@@ -109,7 +197,7 @@
     <!-- SECTION 3 -->
 
    
-<section class="section3">
+<section class="section3" id="section3">
           <div class="change1">
             <div class="persorec">
             <pre>01  Personnaliser</pre>
@@ -143,7 +231,7 @@
 
 
    
-    <div class="carte-menu">
+    <div class="carte-menu"  >
 
         <div class="statut">
             <i class="fa-solid fa-check"></i>
@@ -158,9 +246,12 @@
 
         <hr>
 
-        <div class="ligne-prix">
-            <span>Base · Espresso</span>
-            <span>18,00 DH</span>
+
+        <div id="facture-details">
+
+        <div class="ligne-prix" >
+            <span></span>
+            <span>DH</span>
         </div>
 
         <div class="ligne-prix">
@@ -178,11 +269,12 @@
             <span>3,00 DH</span>
         </div>
 
+        </div>
         <hr>
 
         <div class="total">
             <span>Total</span>
-            <strong >29,00 DH</strong>
+            <strong id="total-facture" >00,00 DH</strong>
         </div>
 
         <p class="information">
