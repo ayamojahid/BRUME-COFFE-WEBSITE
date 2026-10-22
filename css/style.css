@@ -61,7 +61,7 @@ header h1 {
 
 header img {
     height: 45px;
-    width: 260px;
+    max-width: 260px;
 }
 
 nav {
@@ -91,7 +91,7 @@ hr {
 
 .section1 img {
     height: 628px;
-    width: 716px;
+    max-width: 716px;
     border-radius: 10px;
     margin-left: 5rem;
 }
@@ -329,7 +329,7 @@ footer p {
     }
 
     .divimagedesc img {
-        width: 100%;
+        max-width: 100%;
         height: 500px;
         margin: 0;
         padding: 20px;
@@ -354,11 +354,16 @@ footer p {
     }
 
 
+
+    /* summary respnsible */
     .tout-order{
         display: flex;
         flex-direction: column;
     }
 
+    .carte-menu{
+        width: 100%;
+    }
 }
 
 
@@ -549,3 +554,19 @@ footer p {
 }
 
 
+
+.factureHeader{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: red;
+    
+}
+
+.flexBetween{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    align-items: center;
+}
