@@ -1,23 +1,26 @@
 
 const optionsContainer =document.getElementById("options-container");
-
 const PrixTotal = document.getElementById("prix-total");
-
 const BoutonPanier =document.getElementById("ajouter-panier");
-
-
-
+const Section1 =document.getElementById("section1");
+const Section2 =document.querySelector(".section2");
+const Section3 = document.getElementById("section3");
 
 document.addEventListener("DOMContentLoaded" , Remplir);
+BoutonPanier.addEventListener("click" ,deleteContent);
 
+function deleteContent() {
+   Section1.style.display = "none";
+    Section3.style.display = "block";
+    Section2.style.display="none";
+    rempliInfo();
+// const factureHeder= document.createElement("div");
+// const factureDatails =document.createElement("div");
+// const factureHeader =document.createElement("div");
 
-
-
-
-
+}
 
 function Remplir() {
-
        optionsContainer.innerHTML=`
     <div class="choises1">
     <div class="titre">
@@ -37,7 +40,6 @@ function Remplir() {
         </label>
     </div>
 </div>
-
 
 <div class="choix2">
     <div class="titre">
@@ -62,7 +64,6 @@ function Remplir() {
 </label>
     </div>
 </div>
-
 <div class="choix3">
     <div class="titre">
         <label>03 Le lait</label>
@@ -86,7 +87,6 @@ function Remplir() {
 </label>
     </div>
 </div>
-
 <div class="choix4">
     <div class="titre">
         <label>04 La touche en plus</label>
@@ -106,16 +106,14 @@ function Remplir() {
     </div>
 </div>
     `;
-
 const options = document.querySelectorAll("#options-container input");
 options.forEach(function(opt) {
     opt.addEventListener("change" , CalculePrix);
+
 })
 
 
-
 }
-
 
 
 
@@ -140,31 +138,23 @@ const config = {
   }
 };
 
-
 let reserve = [];
 let totalPrix = 0;
-
 function CalculePrix() {
    
-
      const choix = document.querySelectorAll("#options-container input:checked");
-
             
           totalPrix=0;
           reserve =[];
-
       choix.forEach(function(opt)  {
         
-
    
         
     const nom = opt.id;
     const categorie = opt.name;
     const prix = Number(opt.value);
   
-
         totalPrix+=prix;
-
         reserve.push(
             {
                categorie: categorie,
@@ -173,10 +163,27 @@ function CalculePrix() {
             }
         )
 
-
         PrixTotal.textContent=totalPrix   + "DH";
-
         console.log(reserve);
       })
 }
 
+function rempliInfo() {
+    const factureDetails =document.getElementById("facture-details");
+    const totalFacture =document.getElementById("total-facture");
+    
+        factureDetails.innerHTML = "";
+        
+    reserve.forEach(function(opt) {
+        factureDetails.innerHTML += `
+         <div class="ligne-prix">  
+         <span> ${opt.categorie}  . ${opt.nom}   </span>
+         <span> ${opt.prix}  DH </span>
+         </div>
+         `;
+       
+    });
+   
+  
+  totalFacture.textContent=totalPrix + " DH" ;
+}
