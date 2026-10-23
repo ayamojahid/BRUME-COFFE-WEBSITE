@@ -132,13 +132,19 @@ hr {
     font-size: 0.81;
 }
 
-.persorec :first-child {
+.persorec pre:first-of-type {
     color: var(--vert);
+    cursor: pointer;
 }
 
-.persorec :last-child {
+.persorec pre:last-of-type  {
     color: var(--gris);
+    cursor: pointer;
+
 }
+
+
+
 
 .change1 > h6 {
     font-family: 'DM Sans', sans-serif;
@@ -307,6 +313,9 @@ footer p {
         display: none;
     }
 
+    .logo h1{
+        cursor: pointer;
+    }
     .logo i, .panier i, .logo h1 {
         font-size: 1.5rem;
     }
@@ -575,4 +584,18 @@ footer p {
 
 .section3{
     display: none;
+}
+
+.changepage{
+    cursor: pointer;
+    
+}
+
+.prePersona{
+    color: #394B32 !important; 
+}
+
+
+.logo a , .persorec a{
+    text-decoration: none;
 }

@@ -2,23 +2,25 @@
 const optionsContainer =document.getElementById("options-container");
 const PrixTotal = document.getElementById("prix-total");
 const BoutonPanier =document.getElementById("ajouter-panier");
-const Section1 =document.getElementById("section1");
+const Section1 =document.querySelector(".section1");
 const Section2 =document.querySelector(".section2");
 const Section3 = document.getElementById("section3");
 
+const Recup =document.querySelector(".recup");
+Recup.addEventListener("click" , deleteContent );
+const PanierChange = document.getElementById("panierChange");
+
 document.addEventListener("DOMContentLoaded" , Remplir);
 BoutonPanier.addEventListener("click" ,deleteContent);
+
 
 function deleteContent() {
    Section1.style.display = "none";
     Section3.style.display = "block";
     Section2.style.display="none";
     rempliInfo();
-// const factureHeder= document.createElement("div");
-// const factureDatails =document.createElement("div");
-// const factureHeader =document.createElement("div");
-
 }
+
 
 function Remplir() {
        optionsContainer.innerHTML=`
@@ -110,10 +112,7 @@ const options = document.querySelectorAll("#options-container input");
 options.forEach(function(opt) {
     opt.addEventListener("change" , CalculePrix);
 
-})
-
-
-}
+})   }
 
 
 
@@ -138,18 +137,17 @@ const config = {
   }
 };
 
+let nPanier=0;
+PanierChange.textContent=` ${nPanier} `;
 let reserve = [];
 let totalPrix = 0;
 function CalculePrix() {
    
      const choix = document.querySelectorAll("#options-container input:checked");
-            
+            nPanier=0
           totalPrix=0;
           reserve =[];
       choix.forEach(function(opt)  {
-        
-   
-        
     const nom = opt.id;
     const categorie = opt.name;
     const prix = Number(opt.value);
@@ -165,7 +163,14 @@ function CalculePrix() {
 
         PrixTotal.textContent=totalPrix   + "DH";
         console.log(reserve);
-      })
+
+        nPanier=1;
+       PanierChange.textContent=` ${nPanier} `;
+        
+      
+      }
+    )
+      
 }
 
 function rempliInfo() {
