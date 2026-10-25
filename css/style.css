@@ -90,10 +90,12 @@ hr {
 }
 
 .section1 img {
-    height: 628px;
+    display: block;
+    width: 100%;
     max-width: 716px;
+    height: auto;
+    margin-left: 0;
     border-radius: 10px;
-    margin-left: 5rem;
 }
 
 .divimagedesc {
@@ -129,7 +131,7 @@ hr {
 
 .change1 pre {
     font-family: 'DM Sans', sans-serif;
-    font-size: 0.81;
+    font-size: 0.81rem;
 }
 
 .persorec pre:first-of-type {
@@ -145,12 +147,12 @@ hr {
 
 
 
-
-.change1 > h6 {
+.change1 > .surtitre {
     font-family: 'DM Sans', sans-serif;
     font-weight: 500;
     font-size: 1rem;
     color: var(--vert);
+    margin-bottom: 12px;
 }
 
 .change1 > h2 {
@@ -303,20 +305,25 @@ footer p {
     font-weight: 800;
 }
 
+
 @media only screen and (max-width: 700px) {
 
     html {
         font-size: 12px;
     }
 
-    .haut, nav {
+    .haut,
+    nav {
         display: none;
     }
 
-    .logo h1{
+    .logo h1 {
         cursor: pointer;
     }
-    .logo i, .panier i, .logo h1 {
+
+    .logo i,
+    .panier i,
+    .logo h1 {
         font-size: 1.5rem;
     }
 
@@ -333,13 +340,15 @@ footer p {
 
     .divimagedesc {
         width: 100%;
-        height: 450px;
+        height: auto;
         background-color: var(--beige);
     }
 
     .divimagedesc img {
+        display: block;
+        width: 100%;
         max-width: 100%;
-        height: 500px;
+        height: auto;
         margin: 0;
         padding: 20px;
         border-radius: 3rem;
@@ -353,30 +362,62 @@ footer p {
         padding: 12px;
     }
 
-    pre {
+    .persorec pre {
         display: none;
     }
 
     .section2 {
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
+        gap: 1rem;
     }
 
-
-
-    /* summary respnsible */
-    .tout-order{
+    
+    .tout-order {
         display: flex;
         flex-direction: column;
+        align-items: stretch;
+        gap: 1.5rem;
+        padding: 1rem;
     }
 
-    .carte-menu{
+    .image-text-cafe {
         width: 100%;
+        min-width: 0;
+    }
+
+    .image-text-cafe div {
+        margin-left: 0;
+    }
+
+    .image-cafe img {
+        width: 100%;
+        height: auto;
+    }
+
+    .signature {
+        flex-wrap: wrap;
+    }
+
+    .carte-menu {
+        width: 100%;
+        min-width: 0;
+        margin-top: 0;
+        padding: 1.5rem;
+    }
+
+    .section2 button {
+        max-width: 100%;
+    }
+
+    footer {
+        flex-wrap: wrap;
+        gap: 1rem;
     }
 }
 
 
-/* css pour section 3 changable  */
 
 .tout-order {
     display: flex;
