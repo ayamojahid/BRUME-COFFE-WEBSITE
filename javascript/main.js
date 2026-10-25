@@ -15,6 +15,11 @@ BoutonPanier.addEventListener("click" ,deleteContent);
 
 
 function deleteContent() {
+      if (reserve.length == 0 ) {
+          alert("Votre panier est vide ! Veuillez remplir le panier.");
+          return
+    }
+    
    Section1.style.display = "none";
     Section3.style.display = "block";
     Section2.style.display="none";
@@ -178,7 +183,6 @@ function rempliInfo() {
     const totalFacture =document.getElementById("total-facture");
     
         factureDetails.innerHTML = "";
-        
     reserve.forEach(function(opt) {
         factureDetails.innerHTML += `
          <div class="ligne-prix">  
