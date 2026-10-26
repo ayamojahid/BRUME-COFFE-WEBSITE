@@ -1,0 +1,63 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.produit{
+    display: flex;
+    padding: 1rem;
+    gap: 12px;
+    align-items: center;
+    font-size: 1rem;
+}
+
+
+.panier , .title{
+    padding: 2rem;
+}
+.quantite{
+    display: flex;
+   gap: 1.5rem;
+   
+}
+.quantite button{
+width: 1.5rem;
+height: 1.5rem;
+}
+
+.produit > button{
+width: 3rem;
+}
+
+hr{
+    padding: 1rem;
+}
+.ajouteBTN{
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.quantite{
+    
+    height: auto;
+    width: auto;
+    border-radius: 1rem;
+    border-style: solid;
+    border-color: #708090;
+}
+.quantite p {
+    font-size: 1rem;
+    color: black;
+    font-weight: 600;
+}
+.quantite button{
+    border-radius: 1rem;
+    cursor: pointer;
+    border-color: #708090;
+    border-style: none;
+}
+

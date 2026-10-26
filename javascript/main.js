@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded" , Remplir);
 BoutonPanier.addEventListener("click" ,deleteContent);
 
 
+
 function deleteContent() {
       if (reserve.length == 0 ) {
           alert("Votre panier est vide ! Veuillez remplir le panier.");
