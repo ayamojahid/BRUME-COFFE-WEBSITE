@@ -1,63 +1,172 @@
 
-*{
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700&display=swap');
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Bricolage Grotesque', sans-serif;
 }
 
 
-.produit{
+.title {
+    padding: 2rem;
+}
+
+.title h1 {
+    margin-bottom: 0.5rem;
+    color: #30291F;
+}
+
+.title p {
+    color: #796A59;
+}
+
+
+.checkout-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+    padding: 0 2rem;
+    align-items: start;
+}
+
+
+.checkout-container > .panier,
+.checkout-container > .formulaire {
+    min-width: 0;
+    padding: 1.5rem;
+    border: 1px solid #E7E0D5;
+    border-radius: 0.5rem;
+    background-color: #FAF7F0;
+}
+
+.checkout-container h2 {
+    margin-bottom: 1rem;
+    color: #394B32;
+}
+
+.checkout-container h3 {
+    margin-top: 0.5rem;
+    color: #394B32;
+}
+
+
+.produit {
     display: flex;
-    padding: 1rem;
+    padding: 1rem 0;
     gap: 12px;
     align-items: center;
     font-size: 1rem;
+    border-bottom: 1px solid #E7E0D5;
 }
 
-
-.panier , .title{
-    padding: 2rem;
-}
-.quantite{
+.quantite {
     display: flex;
-   gap: 1.5rem;
-   
-}
-.quantite button{
-width: 1.5rem;
-height: 1.5rem;
-}
-
-.produit > button{
-width: 3rem;
-}
-
-hr{
-    padding: 1rem;
-}
-.ajouteBTN{
-    display: flex;
-    gap: 2rem;
-    padding: 2rem;
-}
-
-.quantite{
-    
-    height: auto;
-    width: auto;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid #D5CDBF;
     border-radius: 1rem;
-    border-style: solid;
-    border-color: #708090;
+    padding: 0.2rem 0.5rem;
 }
+
 .quantite p {
     font-size: 1rem;
     color: black;
     font-weight: 600;
 }
-.quantite button{
-    border-radius: 1rem;
+
+.quantite button {
+    display: flex;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
     cursor: pointer;
-    border-color: #708090;
-    border-style: none;
+    justify-content: center;
+    align-items: center;
 }
 
+button:hover {
+    opacity: 0.9;
+}
+
+.checkout-container button {
+    padding: 0.7rem 1rem;
+    border: none;
+    border-radius: 0.4rem;
+    background-color: #394B32;
+    color: white;
+    cursor: pointer;
+}
+
+#ajouteBTN {
+    margin-top: 1rem;
+}
+
+
+.formulaire form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.formulaire label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    flex: 1;
+    min-width: 0;
+}
+
+.formulaire form .form-div {
+    display: flex;
+    gap: 1rem;
+}
+
+.formulaire input {
+    width: 100%;
+    min-width: 0;
+    height: 2.5rem;
+    padding: 0.5rem;
+    border: 1px solid #D5CDBF;
+    border-radius: 0.3rem;
+    background-color: white;
+}
+
+.formulaire input:focus {
+    outline: 2px solid #394B32;
+}
+#totalPanier {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #394B32;
+}
+
+.panier > p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 1rem 0;
+}
+
+@media (max-width: 768px) {
+    .checkout-container {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+
+    .title {
+        padding: 1.5rem 1rem;
+    }
+
+    .formulaire form .form-div {
+        flex-direction: column;
+    }
+}

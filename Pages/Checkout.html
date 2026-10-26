@@ -12,7 +12,7 @@
 
 
 <body>
-
+     
 
     <div class="haut">
         <p>Du grain à votre tasse. Un café qui vous ressemble.</p>
@@ -49,30 +49,108 @@
 
      <main>
 
-       <section>
-<div class="title">
-<h1>Finalisez ma commande</h1>
-<p>Vérifiez votre panier, ajoutez d'autres produits si besoin et complétez vos informations de paiement.</p>
-</div>
-</section> 
+      <section class="title">
+        <h1>Finalisez ma commande</h1>
+        <p>
+            Vérifiez votre panier, ajoutez d'autres produits
+            si besoin et complétez vos informations de paiement.
+        </p>
+    </section>
 
-  
-<section class="panier">
 
-    <h2>Mon panier</h2>
+<section class="checkout-container">
 
-  
-    <div id="ScoffeeCart">
 
-        <h1>revrvez</h1>
+    <div class="panier">
+        <h2>Mon panier</h2>
 
+        <div id="ScoffeeCart">
+        </div>
+
+      
+   <p>Total : <span id="totalPanier">0,00 DH</span></p>
+        <button id="ajouteBTN" type="button">
+            + Ajouter un autre produit
+        </button>
     </div>
 
-    <hr>
+    <div class="formulaire">
+        <h2>Informations de livraison et de paiement</h2>
 
-    <button id="ajouteBTN" type="button">
-        + Ajouter un autre produit
-    </button>
+        <form action="" id="checkoutForm">
+
+            <h3>Informations personnelles</h3>
+
+            <div class="form-div">
+                <label for="nom">
+                    Nom *
+                    <input type="text" id="nom" required
+                           placeholder="Votre nom">
+                </label>
+
+                <label for="prenom">
+                    Prénom *
+                    <input type="text" id="prenom" required
+                           placeholder="Votre prénom">
+                </label>
+            </div>
+
+            <label for="email">
+                Email *
+                <input type="email" id="email" required
+                       placeholder="email@gmail.com">
+            </label>
+
+            <h3>Adresse de livraison</h3>
+
+            <label for="adresse">
+                Adresse *
+                <input type="text" id="adresse" required
+                       placeholder="123 Rue Exemple">
+            </label>
+
+            <div class="form-div">
+                <label for="ville">
+                    Ville *
+                    <input type="text" id="ville" required
+                           placeholder="Votre ville">
+                </label>
+
+                <label for="codepostal">
+                    Code postal *
+                    <input type="text" id="codepostal" required
+                           placeholder="Code postal">
+                </label>
+            </div>
+
+            <h3>Informations de paiement</h3>
+
+            <label for="carte">
+                Numéro de carte bancaire *
+                <input type="text" id="carte" required
+                       inputmode="numeric"
+                       placeholder="1234 5678 9012 3456">
+            </label>
+
+            <div class="form-div">
+                <label for="dateexp">
+                    Date d'expiration *
+                    <input type="text" id="dateexp" required
+                           placeholder="MM/AA">
+                </label>
+
+                <label for="cvv">
+                    CVV *
+                    <input type="password" id="cvv" required
+                           inputmode="numeric"
+                           placeholder="123">
+                </label>
+            </div>
+
+            <button type="submit">Confirmer la commande</button>
+
+        </form>
+    </div>
 
 </section>
 
@@ -80,8 +158,6 @@
 
 
 
-</section>
-    
  </main>
 
      <footer >
