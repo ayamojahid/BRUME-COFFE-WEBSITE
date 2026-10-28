@@ -84,7 +84,7 @@ function Remplir() {
     <span>Inclus</span>
         </label>
 <label class="carte" for="lait-avoine">
-    <input type="radio" id="lait-avoine" name="lait"   value="${config.lait.avoine.price}">
+    <input type="radio" id="lait-avoine" dataset="${config.lait.avoine.name}"   value="${config.lait.avoine.price}">
     <span>${config.lait.avoine.name}</span>
     <span>${config.lait.avoine.price}DH</span>
 </label>
@@ -102,7 +102,7 @@ function Remplir() {
     </div>
     <div class="options">
         <label class="carte" for="Caramel">
-            <input type="checkbox" id="Caramel" name="supplements"   value="${config.supplements.caramel.price}">
+            <input type="checkbox" id="Caramel" name=${config.supplements.caramel.name}   value="${config.supplements.caramel.price}">
             <span>${config.supplements.caramel.name}</span>
             <span>${config.supplements.caramel.price}DH</span>
         </label>
@@ -124,7 +124,7 @@ options.forEach(function(opt) {
 
 const config = {
   base: {
-    espresso: { name: "Espresso", price: 18 },
+    espresso: { name: "Espresso", price: 20  },
     filtre: { name: "Filtre", price: 16 }
   },
   taille: {
