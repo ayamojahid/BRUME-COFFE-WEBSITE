@@ -111,7 +111,7 @@ for(let i = 0 ;  i <coffeeCart.length ; i++) {
   total+= coffeeCart[i].price*coffeeCart[i].quantity;
 prTotal.textContent=`${total} DH`;
 }
-console.log(total);
+
 return total;
 
 }
@@ -133,9 +133,9 @@ const coffeeProducts = [
 const Quick = document.getElementById("listeProduits");
 console.log(Quick);
 
-function afficherQuick() {
+function afficherQuick(produits) {
     Quick.innerHTML = "";
-  coffeeProducts.forEach(function(produit){
+  produits.forEach(function(produit){
     
    Quick.innerHTML+=`
     <div class="produit" data-id="${produit.id}">
@@ -153,12 +153,12 @@ function afficherQuick() {
          
         </div>
 
-        <div>   <button type="button">Ajouter</button>  </div>  
+        <div>   <button  type="button">Ajouter</button>  </div>  
       </div>   
    `
   })
 }
-afficherQuick()
+afficherQuick(coffeeProducts);
 
 
 const AddModal = document.getElementById("quickAddModal");
@@ -177,7 +177,21 @@ fermerBTN.addEventListener("click", function() {
 
 
 
+const searchModalProduit = document.getElementById("searchProduit");
 
+
+searchModalProduit.addEventListener("input", function () {
+
+  let stock = searchModalProduit.value.toLowerCase();
+
+  const resultat = coffeeProducts.filter((opt) => {
+    return opt.name.toLowerCase().includes(stock);
+  });
+
+  console.log(resultat);
+  afficherQuick(resultat);
+
+});
 
 
 

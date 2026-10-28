@@ -195,9 +195,10 @@ dialog button {
 }
 input{
     border-radius: 3px;
-    height: 1.5rem;
+    height: 2.5rem;
     border-style: solid;
     width: 40%;
+     padding: 0.5rem;
 }
 dialog button:hover {
   background-color: #526849;

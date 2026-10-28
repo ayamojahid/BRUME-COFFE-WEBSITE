@@ -197,3 +197,11 @@ function rempliInfo() {
   
   totalFacture.textContent=totalPrix + " DH" ;
 }
+
+
+
+const btnPanier = document.getElementById("btn-panier");
+
+btnPanier.addEventListener("click", function () {
+  window.location.href = "/Pages/Checkout.html";
+});
