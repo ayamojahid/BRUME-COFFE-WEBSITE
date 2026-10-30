@@ -203,5 +203,5 @@ function rempliInfo() {
 const btnPanier = document.getElementById("btn-panier");
 
 btnPanier.addEventListener("click", function () {
-  window.location.href = "/Pages/Checkout.html";
+  window.location.href = "Pages/Checkout.html";
 });
