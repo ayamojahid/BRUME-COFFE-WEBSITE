@@ -91,9 +91,7 @@
     align-items: center;
 }
 
-button:hover {
-    opacity: 0.9;
-}
+
 
 .checkout-container button {
     padding: 0.7rem 1rem;
@@ -204,17 +202,15 @@ dialog button:hover {
   background-color: #526849;
 }
 
-
-@keyframes apparition {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.fermer{
+background-color: brown;
 }
+.fermer:hover{
+    background-color: red;
+}
+
+
+
 
 @media (max-width: 768px) {
     .checkout-container {
