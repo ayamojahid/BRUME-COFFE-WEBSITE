@@ -2,7 +2,7 @@
 const ProduitcoffeeCart = document.getElementById("ScoffeeCart");
 
 let coffeeCart = [
-  { id: "c2", name: "Cappuccino Mousseux", price: 8.00, quantity: 2, image: "../assets/images/caffeChek1.jpg" },
+  { id: "c2", name: "Cappuccino Mousseux", price: 8.00, quantity: 2, image: "../assets/images/CappuccinoMousseux.png" },
   { id: "c3", name: "Latte Caramel", price: 4.50, quantity: 1, image: "../assets/images/latter.png" },
   { id: "c8", name: "Mug Isotherme Noir", price: 15.00, quantity: 1, image: "../assets/images/BlackMugNoir.png" }
 ];
@@ -112,7 +112,7 @@ return total;
 const coffeeProducts = [
   { id: "c1", name: "Espresso Intense",quantity: 1, category: "Base", price: 2.50, image: "../assets/images/EspressoIntense.png" },
   { id: "c2", name: "Cappuccino Mousseux",quantity: 1, category: "Classique", price: 4.00, image: "../assets/images/CappuccinoMousseux.png" },
-  { id: "c3", name: "Latte Caramel",quantity: 1, category: "Gourmand", price: 4.50, image: "../assets/images/LatteCaramel.png" },
+  { id: "c3", name: "Latte Caramel",quantity: 1, category: "Gourmand", price: 4.50, image: "../assets/images/latter.png" },
   { id: "c4", name: "Flat White",quantity: 1, category: "Classique", price: 3.80, image: "../assets/images/FlatWhite.png" },
   { id: "c5", name: "Iced Matcha Latte",quantity: 1, category: "Froid", price: 5.00, image: "../assets/images/IcedMatchaLatte.png" },
   { id: "c6", name: "Cold Brew",quantity: 1, category: "Froid", price: 4.20, image: "../assets/images/ColdBrewCoffee.png" },
@@ -196,35 +196,76 @@ const AllButton =document.querySelectorAll(".buttoncoffeProducts");
 const divFirst =document.getElementById("divFirst");
 
 
+for (let i = 0; i < AllButton.length; i++) {
+
+    AllButton[i].addEventListener("click", function() {
+
+        let produit = AllButton[i].closest(".produit");
+        let id = produit.dataset.id;
+        let newProduit;
+
+        for (let j = 0; j < coffeeProducts.length; j++) {
+
+            if (coffeeProducts[j].id === id) {
+                newProduit = coffeeProducts[j];
+                // console.log("hana" , newProduit);
+                break;
+            }
+        }
+
+        let existe = false;
+
+        for (let k = 0; k < coffeeCart.length; k++) {
+
+            if (coffeeCart[k].id === newProduit.id) {
+                  coffeeCart[k].quantity++;
+                  existe = true;
+                break;
+            }
+        }
+
+      
+        if (existe === false) {
+            coffeeCart.push(newProduit);
+        }
+
+
+        RemplircoffeeCart();
+
+        AddModal.close();
+
+        // console.log(coffeeCart);
+
+    });
+
+}
 
 
 
 
 
-for(let i = 0 ; i< AllButton.length ; i++) { 
- AllButton[i].addEventListener("click", function() {
-    let produit =AllButton[i].closest(".produit");
-  let id = produit.dataset.id;
-  let newProduit;
 
-  for(let j = 0 ; j<coffeeProducts.length ; j++ ) {
-    if(coffeeProducts[j].id    ===  id ) {
-     let newProduit = coffeeProducts[j];
+let email = document.getElementById("email");
+console.log(email);
+let nameprenom = document.querySelectorAll(".nomp");
+console.log(nameprenom)
 
-      console.log(newProduit);
+let btn = document.getElementById("valider");
 
-      coffeeCart.push(newProduit);
 
-      console.log(coffeeCart);
+btn.addEventListener("click", function() {
 
-       RemplircoffeeCart();
 
-       AddModal.close();
+
+    if (/^[a-zA-Z0-9._%+-]+@gmail\.com$/.test(email.value)) {
+    
+     return;
+
+    } else {
+      email.style.borderColor=" red";
+      email.style.outline="red"
+       alert("Veuillez entrer une adresse Gmail valide");
     }
-  }
-  console.log("ana " + newProduit);
- 
-})}
 
-
+});
 
