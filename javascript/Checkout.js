@@ -110,52 +110,58 @@ return total;
 }
 
 const coffeeProducts = [
-  { id: "c1", name: "Espresso Intense",quantity: 1, category: "Base", price: 2.50, image: "../assets/images/EspressoIntense.png" },
-  { id: "c2", name: "Cappuccino Mousseux",quantity: 1, category: "Classique", price: 4.00, image: "../assets/images/CappuccinoMousseux.png" },
-  { id: "c3", name: "Latte Caramel",quantity: 1, category: "Gourmand", price: 4.50, image: "../assets/images/latter.png" },
-  { id: "c4", name: "Flat White",quantity: 1, category: "Classique", price: 3.80, image: "../assets/images/FlatWhite.png" },
-  { id: "c5", name: "Iced Matcha Latte",quantity: 1, category: "Froid", price: 5.00, image: "../assets/images/IcedMatchaLatte.png" },
-  { id: "c6", name: "Cold Brew",quantity: 1, category: "Froid", price: 4.20, image: "../assets/images/ColdBrewCoffee.png" },
-  { id: "c7", name: "Cookie Pépites", quantity: 1,category: "Snack", price: 2.00, image: "../assets/images/ChocolateChipCookie.png" },
+  { id: "c1", name: "Espresso Intense", category: "Base", price: 2.50, image: "../assets/images/EspressoIntense.png" },
+  { id: "c2", name: "Cappuccino Mousseux" , category: "Classique", price: 4.00, image: "../assets/images/CappuccinoMousseux.png" },
+  { id: "c3", name: "Latte Caramel", category: "Gourmand", price: 4.50, image: "../assets/images/latter.png" },
+  { id: "c4", name: "Flat White", category: "Classique", price: 3.80, image: "../assets/images/FlatWhite.png" },
+  { id: "c5", name: "Iced Matcha Latte", category: "Froid", price: 5.00, image: "../assets/images/IcedMatchaLatte.png" },
+  { id: "c6", name: "Cold Brew", category: "Froid", price: 4.20, image: "../assets/images/ColdBrewCoffee.png" },
+  { id: "c7", name: "Cookie Pépites",category: "Snack", price: 2.00, image: "../assets/images/ChocolateChipCookie.png" },
   { id: "c8", name: "Mug Isotherme Noir", quantity: 1, category: "Accessoire", price: 15.00, image: "../assets/images/BlackMugNoir.png" },
-  { id: "c9", name: "Filtres Papier V60 (x100)",quantity: 1, category: "Accessoire", price: 6.50, image: "../assets/images/V60PaperCoffeeFilters.png" },
-  { id: "c10", name: "Tote Bag 'Coffee Lover", quantity: 1,category: "Accessoire", price: 12.00, image: "../assets/images/CoffeeLoverToteBag.png" }
+  { id: "c9", name: "Filtres Papier V60 (x100)", category: "Accessoire", price: 6.50, image: "../assets/images/V60PaperCoffeeFilters.png" },
+  { id: "c10", name: "Tote Bag 'Coffee Lover", category: "Accessoire", price: 12.00, image: "../assets/images/CoffeeLoverToteBag.png" }
 ];
 
 
 const Quick = document.getElementById("listeProduits");
 console.log(Quick);
 
+const AddModal = document.getElementById("quickAddModal");
+const addBTN = document.getElementById("ajouteBTN");
 function afficherQuick(produits) {
+
     Quick.innerHTML = "";
-  produits.forEach(function(produit){
-    
-   Quick.innerHTML+=`
-    <div class="produit" data-id="${produit.id}" id="divFirst">
-    
-    
-        <img src="${produit.image}" width="10%" height="auto" alt="${produit.name}">
 
-        <div class="details">
-          <h3>${produit.name}</h3>
-        </div>
-<p>Prix : ${produit.price.toFixed(2)}</p>
-        <div class="quantite">
-        
-          <p class="quantite-valeur">CA: ${produit.category} </p>
-         
-        </div>
+    produits.forEach(function(produit) {
 
-        <div>   <button  type="button" class="buttoncoffeProducts"  >Ajouter</button>  </div>  
-      </div>   
-   `
-  })
-}
+        Quick.innerHTML += `
+            <div class="produit" data-id="${produit.id}" id="divFirst">
+
+                <img src="${produit.image}" width="10%" height="auto" alt="${produit.name}">
+
+                <div class="details">
+                    <h3>${produit.name}</h3>
+                </div>
+
+                <p>Prix : ${produit.price.toFixed(2)}</p>
+
+                <div class="quantite">
+                    <p class="quantite-valeur">CA: ${produit.category}</p>
+                </div>
+
+                <div>
+                    <button type="button" class="buttoncoffeProducts">
+                        Ajouter
+                    </button>
+                </div>
+
+            </div>
+        `;
+    })
+      ActiverAjout(); };
 afficherQuick(coffeeProducts);
 
 
-const AddModal = document.getElementById("quickAddModal");
-const addBTN =document.getElementById("ajouteBTN");
 
 addBTN.addEventListener("click" , function() {
 AddModal.showModal();
@@ -191,10 +197,12 @@ searchModalProduit.addEventListener("input",  () => {
 
 
 
-const AllButton =document.querySelectorAll(".buttoncoffeProducts");
 
 const divFirst =document.getElementById("divFirst");
 
+function ActiverAjout() {
+
+const AllButton = Quick.querySelectorAll(".buttoncoffeProducts");
 
 for (let i = 0; i < AllButton.length; i++) {
 
@@ -225,10 +233,18 @@ for (let i = 0; i < AllButton.length; i++) {
         }
 
       
-        if (existe === false) {
-            coffeeCart.push(newProduit);
-        }
+       if (existe === false) {
 
+    let nouveauProduit = {
+        id: newProduit.id,
+        name: newProduit.name,
+        price: newProduit.price,
+        image: newProduit.image,
+        quantity: 1
+    };
+
+    coffeeCart.push(nouveauProduit);
+}
 
         RemplircoffeeCart();
 
@@ -240,7 +256,7 @@ for (let i = 0; i < AllButton.length; i++) {
 
 }
 
-
+}
 
 
 
