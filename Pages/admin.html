@@ -11,49 +11,54 @@
 </head>
 
 <body>
-<form action="" id="product-form">
+<form id="product-form" class="flex flex-col gap-6 p-6 bg-[#FAF7F0]">
 
-    <section id="step-1">
-
-        <div id="informations-produit">
-
-    <label for="Nom">Nom de la boisson</label>
-    <input type="text" id="Nom">
+<section id="step-1" class="flex flex-col gap-4 p-6 bg-white rounded-xl">
+<div id="informations-produit" class="flex flex-col gap-2">
+    <label for="Nom" class="text-sm font-medium text-[#30291F]">Nom de la boisson</label>
+    <input type="text" id="Nom"  name="nom" class="w-full p-2 border border-[#796A59] rounded-lg">
 
     
-    <label for="Prix">Prix de base</label>
-    <input type="number" id="Prix">
+    <label for="Prix" class="text-sm font-medium text-[#30291F]" >Prix de base</label>
+    <input type="number" id="Prix" class="w-full p-2 border border-[#796A59] rounded-lg">
 
-    <label for="description">Description</label>
-    <textarea name="" id="description"></textarea>
+    <label for="description" class="text-sm font-medium text-[#30291F]">Description</label>
+    <textarea name="" id="description" class="w-full p-2 border border-[#796A59] rounded-lg"></textarea>
 
-    <label for="image">Image du produit</label>
-    <input type="text" id="image">
+    <label for="image" class="text-sm font-medium text-[#30291F]">Image du produit</label>
+    <input type="text" id="image" class="w-full p-2 border border-[#796A59] rounded-lg">
  
     </div>
 
 
-    <div id="promotion">
-        <label for="checkPromos">Produit en promotion</label>
-        <input type="checkbox" id="checkPromos">
+    <div id="promotion"  class="flex flex-col gap-2">
+         <div class="flex items-center gap-3">
+    <input type="checkbox" id="checkPromos"
+        class="w-4 h-4 accent-[#394B32]">
 
-        <div id="details-promotion">
-          <label for="pourcentage">Pourcentage de réduction</label>
-          <input type="number" id="pourcentage">
+    <label for="checkPromos" class="text-sm font-medium text-[#30291F]">
+        Produit en promotion
+    </label>
+</div>
 
-          <label for="">Date de fin</label>
-          <input type="date">
+
+        <div id="details-promotion"  class="flex flex-col gap-2">
+          <label for="pourcentage" class="text-sm font-medium text-[#30291F]">Pourcentage de réduction</label>
+          <input type="number" id="pourcentage" class="w-full p-2 border border-[#796A59] rounded-lg">
+
+          <label for="" class="text-sm font-medium text-[#30291F]">Date de fin</label>
+          <input type="date" class="w-full p-2 border border-[#796A59] rounded-lg">
         </div>
 
     </div>
      
-    <button type="button">Next</button>
+    <button type="button" class="bg-[#394B32] text-white px-6 py-2 rounded-lg">Next</button>
     </section>
 
 
         <section id="step-2">
 
-            <div id="origin">
+            <div id="origin"  class="flex flex-col gap-2">
                 <label for="origine">Origine des grains</label>
                 <select name="" id="origine">
                   <option value="">Choisir une origine</option>
@@ -64,72 +69,82 @@
                 </select>
             </div>
 
-             <div id="intensite">
+             <div id="intensite"  class="flex flex-col gap-2">
                 <label for="niveau">Niveau de torréfaction</label>
                 <input id="niveau" type="range" min="1" , max="10" , value="5">
              </div>
 
-             <div id="temperature">
-    <input type="radio" id="chaud" name="temperature" value="chaud">
-    <label for="chaud">Chaud</label>
+           <div id="temperature" class="flex flex-col gap-3">
 
-    <input type="radio" id="glace" name="temperature" value="glace">
-    <label for="glace">Glacé</label>               
-             </div>
-
-
-             <div id="tailles">
-            <div>
-    <label>Tailles disponibles :</label>
-    <div>
- <div>
-        <input type="checkbox" id="small" name="tailles" value="small">
-        <label for="small">Small</label>
-
-        <input type="checkbox" id="medium" name="tailles" value="medium">
-        <label for="medium">Medium</label>
-
-        <input type="checkbox" id="large" name="tailles" value="large">
-        <label for="large">Large</label>
+    <div class="flex items-center gap-2">
+        <input type="radio" id="chaud" name="temperature"
+               value="chaud" class="accent-[#394B32]">
+        <label for="chaud">Chaud</label>
     </div>
-             </div>
 
-             <div id="options-lait">
-<div>
-    <label>Options de lait :</label>
+    <div class="flex items-center gap-2">
+        <input type="radio" id="glace" name="temperature"
+               value="glace" class="accent-[#394B32]">
+        <label for="glace">Glacé</label>
+    </div>
+
+</div>
+
+<div id="tailles">
     <div>
+        <label>Tailles disponibles :</label>
 
- <input type="checkbox" id="vache" name="options-lait" value="vache">
- <label for="">Vache</label>
+        <div>
+            <input type="checkbox" id="small" name="tailles" value="small">
+            <label for="small">Small</label>
 
- <input type="checkbox" id="avoine" name="options-lait" value="avoine">
- <label for="avoine">Avoine</label>
+            <input type="checkbox" id="medium" name="tailles" value="medium">
+            <label for="medium">Medium</label>
 
- <input type="checkbox" id="soja" name="options-lait" value="soja">
-<label for="soja">Soja</label>
+            <input type="checkbox" id="large" name="tailles" value="large">
+            <label for="large">Large</label>
+        </div>
+    </div>
+</div>
 
-<input type="checkbox" id="amande" name="options-lait" value="amande">
-<label for="amande">Amande</label>
 
-  </div>
-             </div>
+<div id="options-lait">
+    <div>
+        <label>Options de lait :</label>
 
-             <div id="supplements">
-                <div>
-                    <label >Supplements</label>
-                </div>
+        <div>
+            <input type="checkbox" id="vache" name="options-lait" value="vache">
+            <label for="vache">Vache</label>
 
-                <div>
-                    <input type="checkbox" name="supplements" value="vanille" id="vanille">
-                    <label for="vanille">Vanille</label>
+            <input type="checkbox" id="avoine" name="options-lait" value="avoine">
+            <label for="avoine">Avoine</label>
 
-                    <input type="checkbox" name="supplements" value="caramel" id="caramel">
-                    <label for="caramel">Caramel</label>
+            <input type="checkbox" id="soja" name="options-lait" value="soja">
+            <label for="soja">Soja</label>
 
-                    <input type="checkbox" name="supplements" value="Noisette" id="Noisette">
-                    <label for="Noisette">Noisette</label>
-                </div>
-             </div>
+            <input type="checkbox" id="amande" name="options-lait" value="amande">
+            <label for="amande">Amande</label>
+        </div>
+    </div>
+</div>
+
+
+<div id="supplements">
+    <div>
+        <label>Supplements</label>
+    </div>
+
+    <div>
+        <input type="checkbox" name="supplements" value="vanille" id="vanille">
+        <label for="vanille">Vanille</label>
+
+        <input type="checkbox" name="supplements" value="caramel" id="caramel">
+        <label for="caramel">Caramel</label>
+
+        <input type="checkbox" name="supplements" value="Noisette" id="Noisette">
+        <label for="Noisette">Noisette</label>
+    </div>
+</div>
 
         <button type="button">Previous</button>
         <button type="button"> Next</button>
