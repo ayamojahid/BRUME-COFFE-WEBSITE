@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- <script src="../javascript/admin.js" defer></script> -->
+
+<link rel="stylesheet" href="../css/output.css">
+    <title>Admin</title>
+    
+</head>
+
+<body>
+<form action="" id="product-form">
+
+    <section id="step-1">
+
+        <div id="informations-produit">
+
+    <label for="Nom">Nom de la boisson</label>
+    <input type="text" id="Nom">
+
+    
+    <label for="Prix">Prix de base</label>
+    <input type="number" id="Prix">
+
+    <label for="description">Description</label>
+    <textarea name="" id="description"></textarea>
+
+    <label for="image">Image du produit</label>
+    <input type="text" id="image">
+ 
+    </div>
+
+
+    <div id="promotion">
+        <label for="checkPromos">Produit en promotion</label>
+        <input type="checkbox" id="checkPromos">
+
+        <div id="details-promotion">
+          <label for="pourcentage">Pourcentage de réduction</label>
+          <input type="number" id="pourcentage">
+
+          <label for="">Date de fin</label>
+          <input type="date">
+        </div>
+
+    </div>
+     
+    <button type="button">Next</button>
+    </section>
+
+
+        <section id="step-2">
+
+            <div id="origin">
+                <label for="origine">Origine des grains</label>
+                <select name="" id="origine">
+                  <option value="">Choisir une origine</option>
+                    <option value="colombie">Colombie</option>
+                    <option value="ethiopie">Éthiopie</option>
+                    <option value="bresil">Brésil</option>
+                    <option value="maison">Mélange Maison</option>
+                </select>
+            </div>
+
+             <div id="intensite">
+                <label for="niveau">Niveau de torréfaction</label>
+                <input id="niveau" type="range" min="1" , max="10" , value="5">
+             </div>
+
+             <div id="temperature">
+    <input type="radio" id="chaud" name="temperature" value="chaud">
+    <label for="chaud">Chaud</label>
+
+    <input type="radio" id="glace" name="temperature" value="glace">
+    <label for="glace">Glacé</label>               
+             </div>
+
+
+             <div id="tailles">
+            <div>
+    <label>Tailles disponibles :</label>
+    <div>
+ <div>
+        <input type="checkbox" id="small" name="tailles" value="small">
+        <label for="small">Small</label>
+
+        <input type="checkbox" id="medium" name="tailles" value="medium">
+        <label for="medium">Medium</label>
+
+        <input type="checkbox" id="large" name="tailles" value="large">
+        <label for="large">Large</label>
+    </div>
+             </div>
+
+             <div id="options-lait">
+<div>
+    <label>Options de lait :</label>
+    <div>
+
+ <input type="checkbox" id="vache" name="options-lait" value="vache">
+ <label for="">Vache</label>
+
+ <input type="checkbox" id="avoine" name="options-lait" value="avoine">
+ <label for="avoine">Avoine</label>
+
+ <input type="checkbox" id="soja" name="options-lait" value="soja">
+<label for="soja">Soja</label>
+
+<input type="checkbox" id="amande" name="options-lait" value="amande">
+<label for="amande">Amande</label>
+
+  </div>
+             </div>
+
+             <div id="supplements">
+                <div>
+                    <label >Supplements</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" name="supplements" value="vanille" id="vanille">
+                    <label for="vanille">Vanille</label>
+
+                    <input type="checkbox" name="supplements" value="caramel" id="caramel">
+                    <label for="caramel">Caramel</label>
+
+                    <input type="checkbox" name="supplements" value="Noisette" id="Noisette">
+                    <label for="Noisette">Noisette</label>
+                </div>
+             </div>
+
+        <button type="button">Previous</button>
+        <button type="button"> Next</button>
+        <button></button>
+        </section>
+
+
+
+    <section id="step-3">
+        <div id="carte-produit"></div>
+    <button type="button">Previous</button>
+    <button type="button">Confirmer</button>
+    </section>
+
+
+
+</form>
+</body>
+
+</html>
