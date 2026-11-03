@@ -6,6 +6,7 @@
      <!-- <script src="../javascript/admin.js" defer></script> -->
 
 <link rel="stylesheet" href="../css/output.css">
+<script src="../javascript/admin.js" defer></script>
     <title>Admin</title>
     
 </head>
@@ -13,8 +14,10 @@
 <body>
 <form id="product-form" class="flex flex-col gap-6 p-6 bg-[#FAF7F0]">
 
-<section id="step-1" class="flex flex-col gap-4 p-6 bg-white rounded-xl">
-<div id="informations-produit" class="flex flex-col gap-2">
+    <!-- SECTION1 -->
+<section id="step-1" class="flex flex-col gap-4 p-6 mr-70 ml-70  bg-white rounded-xl">
+<div id="informations-produit" class="flex flex-col gap-2 " >
+    
     <label for="Nom" class="text-sm font-medium text-[#30291F]">Nom de la boisson</label>
     <input type="text" id="Nom"  name="nom" class="w-full p-2 border border-[#796A59] rounded-lg">
 
@@ -52,16 +55,18 @@
 
     </div>
      
-    <button type="button" class="bg-[#394B32] text-white px-6 py-2 rounded-lg">Next</button>
+    <button type="button" id="Next1-Step1" class="bg-[#394B32] text-white px-6 py-2 rounded-lg cursor-pointer ">Next</button>
     </section>
 
 
-        <section id="step-2">
+
+<!-- SECTION2 -->
+        <section id="step-2" class="flex flex-col gap-4 p-6 mr-70 ml-70  bg-white rounded-xl" hidden>
 
             <div id="origin"  class="flex flex-col gap-2">
-                <label for="origine">Origine des grains</label>
-                <select name="" id="origine">
-                  <option value="">Choisir une origine</option>
+                <label for="origine" class="text-sm font-medium text-[#30291F]">Origine des grains</label>
+                <select name="" id="origine"  class="w-full p-2 border border-[#796A59] rounded-lg">
+                  <option value="" >Choisir une origine</option>
                     <option value="colombie">Colombie</option>
                     <option value="ethiopie">Éthiopie</option>
                     <option value="bresil">Brésil</option>
@@ -70,7 +75,7 @@
             </div>
 
              <div id="intensite"  class="flex flex-col gap-2">
-                <label for="niveau">Niveau de torréfaction</label>
+                <label for="niveau" class="text-sm font-medium text-[#30291F]">Niveau de torréfaction</label>
                 <input id="niveau" type="range" min="1" , max="10" , value="5">
              </div>
 
@@ -79,13 +84,13 @@
     <div class="flex items-center gap-2">
         <input type="radio" id="chaud" name="temperature"
                value="chaud" class="accent-[#394B32]">
-        <label for="chaud">Chaud</label>
+        <label for="chaud" class="text-sm font-medium text-[#30291F]">Chaud</label>
     </div>
 
     <div class="flex items-center gap-2">
         <input type="radio" id="glace" name="temperature"
                value="glace" class="accent-[#394B32]">
-        <label for="glace">Glacé</label>
+        <label for="glace" class="text-sm font-medium text-[#30291F]">Glacé</label>
     </div>
 
 </div>
@@ -145,18 +150,21 @@
         <label for="Noisette">Noisette</label>
     </div>
 </div>
-
-        <button type="button">Previous</button>
-        <button type="button"> Next</button>
-        <button></button>
+<div class="flex justify-between ">
+    <div>  <button id="Previous1" type="button" class="bg-[#394B32] text-white px-6 py-2 rounded-lg cursor-pointer ">Previous</button></div>  
+      <div>  <button id="Next-Step2" type="button" class="bg-[#394B32] text-white px-6 py-2 rounded-lg cursor-pointer "> Next</button>
+        <button></button> </div></div>
         </section>
 
 
+<!-- SECTION3 -->
 
-    <section id="step-3">
+    <section id="step-3" class="flex flex-col gap-4 p-6 mr-70 ml-70  bg-white rounded-xl" hidden>
         <div id="carte-produit"></div>
-    <button type="button">Previous</button>
-    <button type="button">Confirmer</button>
+<div class="flex justify-between ">
+    <div>  <button id="Previous2" type="button" class="bg-[#394B32] text-white px-6 py-2 rounded-lg cursor-pointer ">Previous</button></div>  
+      <div>  <button type="submit" class="bg-[#394B32] text-white px-6 py-2 rounded-lg cursor-pointer "> Confirmer</button>
+        <button></button> </div></div>
     </section>
 
 
