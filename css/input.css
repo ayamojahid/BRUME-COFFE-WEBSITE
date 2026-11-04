@@ -2,8 +2,17 @@
 
 
 
-.Style-Number{
-    @apply  w-11 h-11 rounded-full flex items-center justify-center bg-[#394B32] text-white font-bold ring-4 ring-[#394B32]/20;
+.Style-Number {
+    width: 44px;
+    height: 44px;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #394B32;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 0 0 4px rgb(57 75 50 / 20%);
 }
 
 .ligneBackground{

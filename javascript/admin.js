@@ -11,14 +11,15 @@ const btnPrevious2 =document.querySelector("#Previous2");
 const btnStep2 = document.querySelector("#Next-Step2");
 
 let Information=[];
-const produit={};
+
+let produit={ };
 
 // console.log(btnStep2);
 const progress2Number = document.getElementById("progress-2");
 const line1 = document.getElementById("line-1")
 btnStep1.addEventListener("click" , ()=>{
    if(  validateStep1()  ) {
-    Information.push(produit);
+    // Information.push(produit);
  Section1.hidden=true;
 Section2.hidden=false; 
 progress2Number.classList.add("Style-Number");
@@ -27,7 +28,7 @@ line1.classList.add("ligneBackground");
 else{
 Swal.fire({
             icon: "error",
-            title: "Oops...",
+            title: "Formulaire Invalid",
             text: "Verifier les champs ",
         });
  }
@@ -56,7 +57,9 @@ const imageValid = /^https?:\/\/.+\.(gif|png|jpg|jpeg|webp|svg|psd|bmp|tif)$/i.t
 const pourcentageValid = /^(100|[1-9]?\d)(\.\d{1,2})?$/.test(percentInput.value);
 
 const dateInputValid = new Date(dateInput.value);
+
 const currentDate = new Date();
+
 const dateIsValid = dateInput.value !== "" && dateInputValid > currentDate;
 // console.log(currentDate);
 
@@ -69,7 +72,7 @@ const mesagedate = document.querySelector("#mesagedate")
     if( nomValid ){
         nomInput.style.borderColor="green";
         mesagenom.textContent="";
-        produit.nomProduit=nomInput.value;
+        produit.Nom_Produit=nomInput.value;
     }
     else{
     nomInput.style.borderColor="red";
@@ -88,7 +91,7 @@ const mesagedate = document.querySelector("#mesagedate")
 if( imageValid ) {
 imageInput.style.borderColor="green";
 mesageimage.textContent="" ;
-produit.image=imageInput.value;
+produit.Image=imageInput.value;
 }
     else{
          imageInput.style.borderColor=" red";
@@ -104,7 +107,7 @@ if(checkPromos.checked) {
     if(pourcentageValid) {
       percentInput.style.borderColor="green";
       mesagepercentage.textContent="" 
-      produit.pourcentage=percentInput.value;
+      produit.Pourcentage=percentInput.value;
     }
     else{
          percentInput.style.borderColor=" red";
@@ -129,9 +132,9 @@ if(checkPromos.checked) {
    
     
 }
-console.log(produit)
+// console.log(produit)
 
-console.log(Information)
+// console.log(Information)
    return nomValid && prixValid && imageValid &&  promotionValid ;
 }
 
@@ -183,7 +186,7 @@ const supplementsValid = SupplementsInput.length > 0;
   
 if(origineValid){
     origineInput.style.borderColor="green";  
-    produit.origine=origineInput.value; 
+    produit.Origine=origineInput.value; 
     // console.log(produit)
 }
 else{
@@ -195,7 +198,7 @@ if (temperatureValid) {
     // console.log("smiti " + temperatureInput.value);
     temperatureInput.style.borderColor="green";
     temperatureInput.style.outline="green";
-    produit.temperature=temperatureInput.value;
+    produit.Temperature=temperatureInput.value;
     // console.log(produit)
 }
 else{
@@ -209,16 +212,14 @@ taillesSmall.textContent="";
 // console.log(taillesInput)
 
 
-const  tabTailles=[]
-
+const  tabTailles=[];
 taillesInput.forEach((opt)=>{
-
-    // console.log(" me " + opt.value);
-    tabTailles.push(opt.value);
-produit.tailles=tabTailles;
+ // console.log(" me " + opt.value);
+ tabTailles.push(opt.value);
+produit.Tailles=tabTailles;
 })
-console.log(tabTailles)
-console.log(produit)
+// console.log(tabTailles)
+// console.log(produit)
 }
 else{
     taillesSmall.textContent="Veuiller choisir un Element";
@@ -227,9 +228,19 @@ else{
 
 
 if(laitValid) {
+    
 laitSmall.textContent="";
 
+const tabLait=[];
+laitInput.forEach((opt)=>{
 
+tabLait.push(opt.value);
+
+// console.log(" me " + opt.value)
+produit.Laits=tabLait;
+
+// console.log(produit)
+})
 
 }
 else{
@@ -239,7 +250,15 @@ else{
 
 
 if(supplementsValid) {
-supplementsSmall.textContent=""
+supplementsSmall.textContent="";
+
+const tabSupplement=[];
+SupplementsInput.forEach((opt)=>{
+    tabSupplement.push(opt.value);
+    produit.Supplements=tabSupplement;
+    // console.log(produit);
+
+})
 }
 else{
 supplementsSmall.textContent="Veuiller choisir un Element";
@@ -266,10 +285,54 @@ const ligne2 = document.getElementById("line-2");
 
 btnStep2.addEventListener("click" , ()=>{
 if(validateStep2()) {
+     Information.push(produit);
+     console.log(produit)
+    //  console.log(Information)
 Section2.hidden=true;
 Section3.hidden=false;
 progress3Number.classList.add("Style-Number");
 ligne2.classList.add("ligneBackground");
+
+
+// produit.forEach((opt)=>{
+//     console.log("hello")
+//     const div = document.createElement("div");
+//     const p = document.createElement("p");
+//     p.textContent=opt.;
+//     div.append(p);
+//     console.log(opt)
+// })
+const carteProduit = document.getElementById("carte-produit");
+
+carteProduit.innerHTML = "";
+
+for(let key  in produit) {
+    const div = document.createElement("div");
+    const p = document.createElement("p");
+    const small = document.createElement("small");
+    
+    p.textContent=`${key} : `;
+    small.textContent=produit[key];
+    div.append(p , small);
+    
+     div.append(p, small);
+
+    carteProduit.append(div)
+    div.classList.add("flex", "items-center", "gap-2");
+
+    // console.log(key);
+    // console.log(produit[key]);
+}
+
+
+ }
+
+ else{
+Swal.fire({
+            icon: "error",
+            title: "Formulaire Invalid",
+            text: "Verifier les champs ",
+        });
  }
 
  
