@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <link rel="stylesheet" href="../css/output.css">
+
+
 
 <script src="../javascript/admin.js" defer></script>
 
@@ -29,8 +29,7 @@
 
     <!-- STEP 1 -->
     <div class="flex flex-col items-center gap-2">
-        <div id="progress-1"
-             class="w-11 h-11 rounded-full flex items-center justify-center bg-[#394B32] text-white font-bold ring-4 ring-[#394B32]/20">
+        <div id="progress-1" class="Style-Number" >
             1
         </div>
         <span class="text-xs font-semibold text-[#394B32]">
@@ -39,7 +38,7 @@
     </div>
 
     <!-- LINE -->
-    <div id="line-1" class="h-1 flex-1 bg-gray-300 rounded-full mx-2 mb-6"></div>
+    <div id="line-1" class=" h-1 flex-1 bg-gray-300 rounded-full mx-2 mb-6"></div>
 
     <!-- STEP 2 -->
     <div class="flex flex-col items-center gap-2">
@@ -146,7 +145,7 @@
              </div>
 
            <div id="temperature" class="flex flex-col gap-3">
-
+     <label for="temperature" class="accent-[#394B32]" >Température </label>
     <div class="flex items-center gap-2">
         <input type="radio" id="chaud" name="temperature"
                value="chaud" class="accent-[#394B32]">
@@ -158,13 +157,13 @@
                value="glace" class="accent-[#394B32]">
         <label for="glace" class="text-sm font-medium text-[#30291F]">Glacé</label>
     </div>
+    <small id="temperatureSmall"></small>
 
 </div>
 
 <div id="tailles">
     <div>
         <label>Tailles disponibles :</label>
-
         <div>
             <input type="checkbox" id="small" name="tailles" value="small">
             <label for="small">Small</label>
@@ -176,6 +175,7 @@
             <label for="large">Large</label>
         </div>
     </div>
+    <small id="taillesSmall"></small>
 </div>
 
 
@@ -184,19 +184,20 @@
         <label>Options de lait :</label>
 
         <div>
-            <input type="checkbox" id="vache" name="options-lait" value="vache">
+            <input type="checkbox" id="vache" name="optionslait" value="vache">
             <label for="vache">Vache</label>
 
-            <input type="checkbox" id="avoine" name="options-lait" value="avoine">
+            <input type="checkbox" id="avoine" name="optionslait" value="avoine">
             <label for="avoine">Avoine</label>
 
-            <input type="checkbox" id="soja" name="options-lait" value="soja">
+            <input type="checkbox" id="soja" name="optionslait" value="soja">
             <label for="soja">Soja</label>
 
-            <input type="checkbox" id="amande" name="options-lait" value="amande">
+            <input type="checkbox" id="amande" name="optionslait" value="amande">
             <label for="amande">Amande</label>
         </div>
     </div>
+     <small id="laitSmall"></small>
 </div>
 
 
@@ -215,6 +216,7 @@
         <input type="checkbox" name="supplements" value="Noisette" id="Noisette">
         <label for="Noisette">Noisette</label>
     </div>
+     <small id="supplementsSmall"></small>
 </div>
 <div class="flex justify-between ">
     <div>  <button id="Previous1" type="button" class="bg-[#394B32] text-white px-6 py-2 rounded-lg cursor-pointer ">Previous</button></div>  

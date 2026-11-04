@@ -1,1 +1,12 @@
 @import "tailwindcss";
+
+
+
+.Style-Number{
+    @apply  w-11 h-11 rounded-full flex items-center justify-center bg-[#394B32] text-white font-bold ring-4 ring-[#394B32]/20;
+}
+
+.ligneBackground{
+    @apply bg-[#394B32]
+}
+

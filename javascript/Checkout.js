@@ -111,7 +111,7 @@ return total;
 
 const coffeeProducts = [
   { id: "c1", name: "Espresso Intense", category: "Base", price: 2.50, image: "../assets/images/EspressoIntense.png" },
-  { id: "c2", name: "Cappuccino Mousseux" , category: "Classique", price: 4.00, image: "../assets/images/CappuccinoMousseux.png" },
+  { id: "c2", name: "Cappuccino Mousseux" , category: "Classique", price: 8.00, image: "../assets/images/CappuccinoMousseux.png" },
   { id: "c3", name: "Latte Caramel", category: "Gourmand", price: 4.50, image: "../assets/images/latter.png" },
   { id: "c4", name: "Flat White", category: "Classique", price: 3.80, image: "../assets/images/FlatWhite.png" },
   { id: "c5", name: "Iced Matcha Latte", category: "Froid", price: 5.00, image: "../assets/images/IcedMatchaLatte.png" },

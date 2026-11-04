@@ -10,14 +10,28 @@ const btnPrevious2 =document.querySelector("#Previous2");
 
 const btnStep2 = document.querySelector("#Next-Step2");
 
+let Information=[];
+const produit={};
 
-
-console.log(btnStep2);
-
+// console.log(btnStep2);
+const progress2Number = document.getElementById("progress-2");
+const line1 = document.getElementById("line-1")
 btnStep1.addEventListener("click" , ()=>{
    if(  validateStep1()  ) {
+    Information.push(produit);
  Section1.hidden=true;
-Section2.hidden=false; } })
+Section2.hidden=false; 
+progress2Number.classList.add("Style-Number");
+line1.classList.add("ligneBackground");
+} 
+else{
+Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Verifier les champs ",
+        });
+ }
+ ;})
 
 
 // LES inputs 
@@ -47,14 +61,15 @@ const dateIsValid = dateInput.value !== "" && dateInputValid > currentDate;
 // console.log(currentDate);
 
 const mesagenom = document.querySelector("#mesagenom");
- const mesagePrix = document.querySelector("#mesageprix");
- const mesageimage = document.querySelector("#mesageimage");
- const mesagepercentage = document.querySelector("#mesagepercentage");
+const mesagePrix = document.querySelector("#mesageprix");
+const mesageimage = document.querySelector("#mesageimage");
+const mesagepercentage = document.querySelector("#mesagepercentage");
 const mesagedate = document.querySelector("#mesagedate")
 
     if( nomValid ){
         nomInput.style.borderColor="green";
         mesagenom.textContent="";
+        produit.nomProduit=nomInput.value;
     }
     else{
     nomInput.style.borderColor="red";
@@ -63,6 +78,7 @@ const mesagedate = document.querySelector("#mesagedate")
       if( prixValid ){
         prixInput.style.borderColor="green";
         mesagePrix.textContent="";  
+        produit.Prix=prixInput.value;
     }
     else{
          prixInput.style.borderColor=" red";
@@ -71,7 +87,9 @@ const mesagedate = document.querySelector("#mesagedate")
 
 if( imageValid ) {
 imageInput.style.borderColor="green";
-mesageimage.textContent="" }
+mesageimage.textContent="" ;
+produit.image=imageInput.value;
+}
     else{
          imageInput.style.borderColor=" red";
          mesageimage.textContent="Invalid"
@@ -86,6 +104,7 @@ if(checkPromos.checked) {
     if(pourcentageValid) {
       percentInput.style.borderColor="green";
       mesagepercentage.textContent="" 
+      produit.pourcentage=percentInput.value;
     }
     else{
          percentInput.style.borderColor=" red";
@@ -94,13 +113,25 @@ if(checkPromos.checked) {
     if(dateIsValid) {
    dateInput.style.borderColor="green";
       mesagedate.textContent="" ;
+      produit.Date=dateInput.value;
     }
     else{
            dateInput.style.borderColor=" red";
          mesagedate.textContent="Date Invalid"
     }
+    //  console.log("salam1" + promotionValid);
+    //  console.log("percent" + pourcentageValid)
+    //  console.log("date" + dateIsValid)
+
     promotionValid = pourcentageValid && dateIsValid;
+
+    // console.log("salam2" + promotionValid);
+   
+    
 }
+console.log(produit)
+
+console.log(Information)
    return nomValid && prixValid && imageValid &&  promotionValid ;
 }
 
@@ -112,23 +143,143 @@ detailsPromotion.classList.toggle("hidden");
 })
 
 
+
+
+
+const origineInput = document.querySelector("#origine");
+
+// console.log(origineInput);
+
 function validateStep2() {
-    
+// toutes les input de step 2 de validation
+const temperatureInput = document.querySelector('input[name="temperature"]:checked');
+const taillesInput = document.querySelectorAll('input[name="tailles"]:checked');
+const laitInput = document.querySelectorAll('input[name="optionslait"]:checked');
+const SupplementsInput = document.querySelectorAll('input[name="supplements"]:checked');
+
+// les smals de mesage
+const temperatureSmall =document.querySelector("#temperatureSmall");
+const taillesSmall = document.querySelector("#taillesSmall");
+const laitSmall = document.querySelector("#laitSmall")
+const supplementsSmall = document.querySelector("#supplementsSmall");
+
+
+
+// validation des input avec condiotion
+const origineValid = origineInput.value !== "";
+
+const temperatureValid = temperatureInput !== null;
+
+// console.log(temperatureInput);
+
+const taillesValid = taillesInput.length > 0;
+
+const laitValid = laitInput.length > 0;
+
+const supplementsValid = SupplementsInput.length > 0;
+
+// console.log(temperatureValid)
+
+  
+if(origineValid){
+    origineInput.style.borderColor="green";  
+    produit.origine=origineInput.value; 
+    // console.log(produit)
+}
+else{
+    origineInput.style.borderColor="red";
+}
+
+if (temperatureValid) {
+    temperatureSmall.textContent="";
+    // console.log("smiti " + temperatureInput.value);
+    temperatureInput.style.borderColor="green";
+    temperatureInput.style.outline="green";
+    produit.temperature=temperatureInput.value;
+    // console.log(produit)
+}
+else{
+   temperatureSmall.textContent="Veuiller choisir un Element";
+   temperatureSmall.style.color="red";
+   
+}
+
+if(taillesValid) {
+taillesSmall.textContent="";
+// console.log(taillesInput)
+
+
+const  tabTailles=[]
+
+taillesInput.forEach((opt)=>{
+
+    // console.log(" me " + opt.value);
+    tabTailles.push(opt.value);
+produit.tailles=tabTailles;
+})
+console.log(tabTailles)
+console.log(produit)
+}
+else{
+    taillesSmall.textContent="Veuiller choisir un Element";
+   taillesSmall.style.color="red";
+}
+
+
+if(laitValid) {
+laitSmall.textContent="";
+
+
+
+}
+else{
+   laitSmall.textContent="Veuiller choisir un Element";
+   laitSmall.style.color="red";
+}
+
+
+if(supplementsValid) {
+supplementsSmall.textContent=""
+}
+else{
+supplementsSmall.textContent="Veuiller choisir un Element";
+   supplementsSmall.style.color="red";
+}
+
+
+return origineValid && temperatureValid && taillesValid && laitValid && supplementsValid;
+
+
 }
 
 
 btnPrevious1.addEventListener("click" , ()=>{
 Section2.hidden=true;
 Section1.hidden=false; 
+progress2Number.classList.remove("Style-Number");
+line1.classList.remove("ligneBackground");
 })
 
-btnStep2.addEventListener("click" , ()=>{
 
+const progress3Number=document.getElementById("progress-3");
+const ligne2 = document.getElementById("line-2");
+
+btnStep2.addEventListener("click" , ()=>{
+if(validateStep2()) {
 Section2.hidden=true;
-Section3.hidden=false; 
+Section3.hidden=false;
+progress3Number.classList.add("Style-Number");
+ligne2.classList.add("ligneBackground");
+ }
+
+ 
+
+
 })
 
 btnPrevious2.addEventListener("click" , ()=>{
 Section2.hidden=false;
 Section3.hidden=true; 
+progress3Number.classList.remove("Style-Number");
+ligne2.classList.remove("ligneBackground");
 })
