@@ -334,12 +334,7 @@ Swal.fire({
             text: "Verifier les champs ",
         });
  }
-
- 
-
-
 })
-
 btnPrevious2.addEventListener("click" , ()=>{
 Section2.hidden=false;
 Section3.hidden=true; 

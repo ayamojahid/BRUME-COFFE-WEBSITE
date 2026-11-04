@@ -3,135 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<link rel="stylesheet" href="../css/output.css">
-
-
-
-<script src="../javascript/admin.js" defer></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="../css/output.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="../javascript/admin.js" defer></script>
 
     <title>Admin</title>
-    
 </head>
 
 <body>
 
-    <div class="text-center mb-10">
-    <h1 class="text-3xl font-bold text-[#394B32]">
-        Création d'un produit
+   <div class=" sm:block bg-[#394B32] text-white text-center py-[15px] font-bold">
+    <p>Du grain à votre tasse. Un café qui vous ressemble.</p>
+</div>
+
+   <header class="w-full flex flex-col sm:flex-row items-center justify-between gap-4 px-6 py-5 bg-[#FAF7F0]">
+
+   <div class="flex items-center gap-3">
+    <i class="fa-solid fa-mug-hot text-[#394B32] text-4xl"></i>
+    <a href="../index.html" class="group">
+    <h1 class="font-serif text-4xl font-semibold text-[#30291F] group-hover:text-[#394B32] transition">
+        BRUME
     </h1>
-    <p class="text-[#796A59] mt-2">
-        Ajoutez une nouvelle création à votre catalogue BRUME.
-    </p>
+</a>
 </div>
 
-<div class="flex items-center justify-center max-w-2xl mx-auto mb-8">
+    <div class="flex items-center gap-8">
+        <nav class="hidden sm:flex gap-8">
+            <a href="index.html" class="no-underline text-[#796A59] font-bold text-xl">
+                L'atelier café
+            </a>
 
-    <!-- STEP 1 -->
-    <div class="flex flex-col items-center gap-2">
-        <div id="progress-1" class="Style-Number" >
-            1
+            <a href="" class="no-underline text-[#796A59] font-bold text-xl">
+                Notre savoir-faire
+            </a>
+
+            <a href="" class="no-underline text-[#796A59] font-bold text-xl">
+                Besoin d'aide ?
+            </a>
+        </nav>
+    </div>
+
+    <div class="flex items-center gap-4">
+       <a href="../pages/Checkout.html" class="text-[#394B32] text-2xl hover:text-[#30291F] transition">
+    <i class="fa-solid fa-bag-shopping" id="btn-panier"></i>
+</a>
+
+        <p id="panierChange"></p>
+    </div>
+
+</header>
+
+    <div class="text-center mb-10">
+        <h1 class="text-3xl font-bold text-[#394B32]">
+            Création d'un produit
+        </h1>
+        <p class="text-[#796A59] mt-2">
+            Ajoutez une nouvelle création à votre catalogue BRUME.
+        </p>
+    </div>
+
+<div class="flex items-center justify-center max-w-2xl mx-auto mb-8 bg-[#FAF7F0] p-4 rounded-xl">        <!-- STEP 1 -->
+        <div class="flex flex-col items-center gap-2">
+            <div id="progress-1" class="Style-Number">
+                1
+            </div>
+            <span class="text-xs font-semibold text-[#394B32]">
+                Informations
+            </span>
         </div>
-        <span class="text-xs font-semibold text-[#394B32]">
-            Informations
-        </span>
-    </div>
 
-    <!-- LINE -->
-    <div id="line-1" class=" h-1 flex-1 bg-gray-300 rounded-full mx-2 mb-6"></div>
+        <!-- LINE -->
+        <div id="line-1" class=" h-1 flex-1 bg-gray-300 rounded-full mx-2 mb-6"></div>
 
-    <!-- STEP 2 -->
-    <div class="flex flex-col items-center gap-2">
-        <div id="progress-2"
-             class="w-11 h-11 rounded-full flex items-center justify-center bg-gray-200 text-[#796A59] font-bold">
-            2
+        <!-- STEP 2 -->
+        <div class="flex flex-col items-center gap-2">
+            <div id="progress-2"
+                 class="w-11 h-11 rounded-full flex items-center justify-center bg-gray-200 text-[#796A59] font-bold">
+                2
+            </div>
+            <span class="text-xs text-[#796A59]">
+                Options
+            </span>
         </div>
-        <span class="text-xs text-[#796A59]">
-            Options
-        </span>
-    </div>
 
-    <!-- LINE -->
-    <div id="line-2" class="h-1 flex-1 bg-gray-300 rounded-full mx-2 mb-6"></div>
+        <!-- LINE -->
+        <div id="line-2" class="h-1 flex-1 bg-gray-300 rounded-full mx-2 mb-6"></div>
 
-    <!-- STEP 3 -->
-    <div class="flex flex-col items-center gap-2">
-        <div id="progress-3"
-             class="w-11 h-11 rounded-full flex items-center justify-center bg-gray-200 text-[#796A59] font-bold">
-            3
-        </div>
-        <span class="text-xs text-[#796A59]">
-            Récapitulatif
-        </span>
-    </div>
-
-</div>
-
-
-
-
-
-
-
-
-
-<form id="product-form" class="flex flex-col gap-6 p-4 sm:p-6 bg-[#FAF7F0]">
-
-    <!-- SECTION1 -->
-<section id="step-1" class="w-full max-w-2xl mx-auto flex flex-col gap-4 p-4 sm:p-6 bg-white rounded-xl shadow-sm">
-<div id="informations-produit" class="flex flex-col gap-2 " >
-    
-    <label for="Nom" class="text-sm font-medium text-[#30291F]">Nom de la boisson</label>
-    <input type="text" id="Nom"  name="nom" class="w-full p-2 border border-[#796A59] rounded-lg">
-    <small id="mesagenom" class="text-red-800"></small>
-
-    
-    <label for="Prix" class="text-sm font-medium text-[#30291F]" >Prix de base</label>
-    <input type="number" id="Prix" min="0" class="w-full p-2 border border-[#796A59] rounded-lg">
-    <small id="mesageprix" class="text-red-800"></small>
-
-    <label for="description" class="text-sm font-medium text-[#30291F]">Description</label>
-    <textarea name="" id="description" class="w-full p-2 border border-[#796A59] rounded-lg"></textarea>
-
-    <label for="image" class="text-sm font-medium text-[#30291F]">Image du produit</label>
-    <input type="text" id="image" class="w-full p-2 border border-[#796A59] rounded-lg">
-    <small id="mesageimage" class="text-red-800"></small>
-
-    </div>
-
-
-    <div id="promotion"  class="flex flex-col gap-2">
-         <div class="flex items-center gap-3">
-    <input type="checkbox" id="checkPromos"  class="w-4 h-4 accent-[#394B32]">
-
-    <label for="checkPromos" class="text-sm font-medium text-[#30291F]">   Produit en promotion </label>
-</div >
-
-
-        <div id="details-promotion"  class=" flex flex-col gap-2 hidden"  >
-          <label for="pourcentage" class="text-sm font-medium text-[#30291F]">Pourcentage de réduction</label>
-          <input type="number" id="pourcentage" class="w-full p-2 border border-[#796A59] rounded-lg" min="1" >
-          <small id="mesagepercentage" class="text-red-800"></small>
-
-          <label for="" class="text-sm font-medium text-[#30291F]">Date de fin</label>
-          <input type="date" id="date" class="w-full p-2 border border-[#796A59] rounded-lg">
-          <small id="mesagedate" class="text-red-800"></small>
+        <!-- STEP 3 -->
+        <div class="flex flex-col items-center gap-2">
+            <div id="progress-3"
+                 class="w-11 h-11 rounded-full flex items-center justify-center bg-gray-200 text-[#796A59] font-bold">
+                3
+            </div>
+            <span class="text-xs text-[#796A59]">
+                Récapitulatif
+            </span>
         </div>
 
     </div>
-     
-    <button type="button" id="Next1-Step1" class="bg-[#394B32] text-white px-6 py-2 rounded-lg cursor-pointer ">Next</button>
-    </section>
 
+    <form id="product-form" class="flex flex-col gap-6 p-4 sm:p-6 bg-[#FAF7F0]">
 
+        <!-- SECTION1 -->
+        <section id="step-1" class="w-full max-w-2xl mx-auto flex flex-col gap-4 p-4 sm:p-6 bg-white rounded-xl shadow-sm">
+            <div id="informations-produit" class="flex flex-col gap-2">
 
-<!-- SECTION2 -->
-        <section id="step-2"class="w-full max-w-2xl mx-auto flex flex-col gap-4 p-4 sm:p-6 bg-white rounded-xl shadow-sm" hidden>
+                <label for="Nom" class="text-sm font-medium text-[#30291F]">Nom de la boisson</label>
+                <input type="text" id="Nom" name="nom" class="w-full p-2 border border-[#796A59] rounded-lg">
+                <small id="mesagenom" class="text-red-800"></small>
 
-            <div id="origin"  class="flex flex-col gap-2">
+                <label for="Prix" class="text-sm font-medium text-[#30291F]">Prix de base</label>
+                <input type="number" id="Prix" min="0" class="w-full p-2 border border-[#796A59] rounded-lg">
+                <small id="mesageprix" class="text-red-800"></small>
+
+                <label for="description" class="text-sm font-medium text-[#30291F]">Description</label>
+                <textarea name="" id="description" class="w-full p-2 border border-[#796A59] rounded-lg"></textarea>
+
+                <label for="image" class="text-sm font-medium text-[#30291F]">Image du produit</label>
+                <input type="text" id="image" class="w-full p-2 border border-[#796A59] rounded-lg">
+                <small id="mesageimage" class="text-red-800"></small>
+
+            </div>
+
+            <div id="promotion" class="flex flex-col gap-2">
+                <div class="flex items-center gap-3">
+                    <input type="checkbox" id="checkPromos" class="w-4 h-4 accent-[#394B32]">
+                    <label for="checkPromos" class="text-sm font-medium text-[#30291F]">Produit en promotion</label>
+                </div>
+
+                <div id="details-promotion" class="flex flex-col gap-2 hidden">
+                    <label for="pourcentage" class="text-sm font-medium text-[#30291F]">Pourcentage de réduction</label>
+                    <input type="number" id="pourcentage" class="w-full p-2 border border-[#796A59] rounded-lg" min="1">
+                    <small id="mesagepercentage" class="text-red-800"></small>
+
+                    <label for="" class="text-sm font-medium text-[#30291F]">Date de fin</label>
+                    <input type="date" id="date" class="w-full p-2 border border-[#796A59] rounded-lg">
+                    <small id="mesagedate" class="text-red-800"></small>
+                </div>
+            </div>
+
+            <button type="button" id="Next1-Step1" class="bg-[#394B32] text-white px-6 py-2 rounded-lg cursor-pointer">Next</button>
+        </section>
+
+        <!-- SECTION2 -->
+        <section id="step-2" class="w-full max-w-2xl mx-auto flex flex-col gap-4 p-4 sm:p-6 bg-white rounded-xl shadow-sm" hidden>
+
+            <div id="origin" class="flex flex-col gap-2">
                 <label for="origine" class="text-sm font-medium text-[#30291F]">Origine des grains</label>
-                <select name="" id="origine"  class="w-full p-2 border border-[#796A59] rounded-lg">
-                  <option value="" >Choisir une origine</option>
+                <select name="" id="origine" class="w-full p-2 border border-[#796A59] rounded-lg">
+                    <option value="">Choisir une origine</option>
                     <option value="colombie">Colombie</option>
                     <option value="ethiopie">Éthiopie</option>
                     <option value="bresil">Brésil</option>
@@ -139,106 +161,120 @@
                 </select>
             </div>
 
-             <div id="intensite"  class="flex flex-col gap-2">
+            <div id="intensite" class="flex flex-col gap-2">
                 <label for="niveau" class="text-sm font-medium text-[#30291F]">Niveau de torréfaction</label>
                 <input id="niveau" type="range" min="1" , max="10" , value="5">
-             </div>
+            </div>
 
-           <div id="temperature" class="flex flex-col gap-3">
-     <label for="temperature" class="accent-[#394B32]" >Température </label>
-    <div class="flex items-center gap-2">
-        <input type="radio" id="chaud" name="temperature"
-               value="chaud" class="accent-[#394B32]">
-        <label for="chaud" class="text-sm font-medium text-[#30291F]">Chaud</label>
-    </div>
+            <div id="temperature" class="flex flex-col gap-3">
+                <label for="temperature" class="accent-[#394B32]">Température</label>
+                <div class="flex items-center gap-2">
+                    <input type="radio" id="chaud" name="temperature" value="chaud" class="accent-[#394B32]">
+                    <label for="chaud" class="text-sm font-medium text-[#30291F]">Chaud</label>
+                </div>
 
-    <div class="flex items-center gap-2">
-        <input type="radio" id="glace" name="temperature"
-               value="glace" class="accent-[#394B32]">
-        <label for="glace" class="text-sm font-medium text-[#30291F]">Glacé</label>
-    </div>
-    <small id="temperatureSmall"></small>
+                <div class="flex items-center gap-2">
+                    <input type="radio" id="glace" name="temperature" value="glace" class="accent-[#394B32]">
+                    <label for="glace" class="text-sm font-medium text-[#30291F]">Glacé</label>
+                </div>
+                <small id="temperatureSmall"></small>
+            </div>
 
-</div>
+            <div id="tailles">
+                <div>
+                    <label>Tailles disponibles :</label>
+                    <div>
+                        <input type="checkbox" id="small" name="tailles" value="small">
+                        <label for="small">Small</label>
 
-<div id="tailles">
-    <div>
-        <label>Tailles disponibles :</label>
-        <div>
-            <input type="checkbox" id="small" name="tailles" value="small">
-            <label for="small">Small</label>
+                        <input type="checkbox" id="medium" name="tailles" value="medium">
+                        <label for="medium">Medium</label>
 
-            <input type="checkbox" id="medium" name="tailles" value="medium">
-            <label for="medium">Medium</label>
+                        <input type="checkbox" id="large" name="tailles" value="large">
+                        <label for="large">Large</label>
+                    </div>
+                </div>
+                <small id="taillesSmall"></small>
+            </div>
 
-            <input type="checkbox" id="large" name="tailles" value="large">
-            <label for="large">Large</label>
-        </div>
-    </div>
-    <small id="taillesSmall"></small>
-</div>
+            <div id="options-lait">
+                <div>
+                    <label>Options de lait :</label>
+                    <div>
+                        <input type="checkbox" id="vache" name="optionslait" value="vache">
+                        <label for="vache">Vache</label>
 
+                        <input type="checkbox" id="avoine" name="optionslait" value="avoine">
+                        <label for="avoine">Avoine</label>
 
-<div id="options-lait">
-    <div>
-        <label>Options de lait :</label>
+                        <input type="checkbox" id="soja" name="optionslait" value="soja">
+                        <label for="soja">Soja</label>
 
-        <div>
-            <input type="checkbox" id="vache" name="optionslait" value="vache">
-            <label for="vache">Vache</label>
+                        <input type="checkbox" id="amande" name="optionslait" value="amande">
+                        <label for="amande">Amande</label>
+                    </div>
+                </div>
+                <small id="laitSmall"></small>
+            </div>
 
-            <input type="checkbox" id="avoine" name="optionslait" value="avoine">
-            <label for="avoine">Avoine</label>
+            <div id="supplements">
+                <div>
+                    <label>Supplements</label>
+                </div>
 
-            <input type="checkbox" id="soja" name="optionslait" value="soja">
-            <label for="soja">Soja</label>
+                <div>
+                    <input type="checkbox" name="supplements" value="vanille" id="vanille">
+                    <label for="vanille">Vanille</label>
 
-            <input type="checkbox" id="amande" name="optionslait" value="amande">
-            <label for="amande">Amande</label>
-        </div>
-    </div>
-     <small id="laitSmall"></small>
-</div>
+                    <input type="checkbox" name="supplements" value="caramel" id="caramel">
+                    <label for="caramel">Caramel</label>
 
+                    <input type="checkbox" name="supplements" value="Noisette" id="Noisette">
+                    <label for="Noisette">Noisette</label>
+                </div>
+                <small id="supplementsSmall"></small>
+            </div>
 
-<div id="supplements">
-    <div>
-        <label>Supplements</label>
-    </div>
-
-    <div>
-        <input type="checkbox" name="supplements" value="vanille" id="vanille">
-        <label for="vanille">Vanille</label>
-
-        <input type="checkbox" name="supplements" value="caramel" id="caramel">
-        <label for="caramel">Caramel</label>
-
-        <input type="checkbox" name="supplements" value="Noisette" id="Noisette">
-        <label for="Noisette">Noisette</label>
-    </div>
-     <small id="supplementsSmall"></small>
-</div>
-<div class="flex justify-between ">
-    <div>  <button id="Previous1" type="button" class="bg-[#394B32] text-white px-6 py-2 rounded-lg cursor-pointer ">Previous</button></div>  
-      <div>  <button id="Next-Step2" type="button" class="bg-[#394B32] text-white px-6 py-2 rounded-lg cursor-pointer "> Next</button>
-        <button></button> </div></div>
+            <div class="flex justify-between">
+                <div>
+                    <button id="Previous1" type="button" class="bg-[#394B32] text-white px-6 py-2 rounded-lg cursor-pointer">Previous</button>
+                </div>
+                <div>
+                    <button id="Next-Step2" type="button" class="bg-[#394B32] text-white px-6 py-2 rounded-lg cursor-pointer">Next</button>
+                    <button></button>
+                </div>
+            </div>
 
         </section>
 
+        <!-- SECTION3 -->
+        <section id="step-3" class="w-full max-w-2xl mx-auto flex flex-col gap-4 p-4 sm:p-6 bg-white rounded-xl shadow-sm" hidden>
+            <div id="carte-produit"></div>
 
-<!-- SECTION3 -->
+            <div class="flex justify-between">
+                <div>
+                    <button id="Previous2" type="button" class="bg-[#394B32] text-white px-6 py-2 rounded-lg cursor-pointer">Previous</button>
+                </div>
+                <div>
+                    <button type="submit" class="bg-[#394B32] text-white px-6 py-2 rounded-lg cursor-pointer">Confirmer</button>
+                    <button></button>
+                </div>
+            </div>
+        </section>
 
-    <section id="step-3" class="w-full max-w-2xl mx-auto flex flex-col gap-4 p-4 sm:p-6 bg-white rounded-xl shadow-sm" hidden>
-        <div id="carte-produit"></div>
-<div class="flex justify-between ">
-    <div>  <button id="Previous2" type="button" class="bg-[#394B32] text-white px-6 py-2 rounded-lg cursor-pointer ">Previous</button></div>  
-      <div>  <button type="submit" class="bg-[#394B32] text-white px-6 py-2 rounded-lg cursor-pointer "> Confirmer</button>
-        <button></button> </div></div>
-    </section>
+    </form>
 
+   <footer class="w-full flex flex-wrap justify-between items-center gap-4 px-8 py-8 bg-[#FAF7F0]">
 
+    <p class="text-[#796A59] font-extrabold text-xs">
+        BRUME — Le goût de votre rythme.
+    </p>
 
-</form>
+    <p class="text-[#796A59] font-extrabold text-xs">
+        Une création unique, la vôtre.
+    </p>
+
+</footer>
+
 </body>
-
 </html>
