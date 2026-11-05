@@ -293,38 +293,7 @@ Section3.hidden=false;
 progress3Number.classList.add("Style-Number");
 ligne2.classList.add("ligneBackground");
 
-
-// produit.forEach((opt)=>{
-//     console.log("hello")
-//     const div = document.createElement("div");
-//     const p = document.createElement("p");
-//     p.textContent=opt.;
-//     div.append(p);
-//     console.log(opt)
-// })
-const carteProduit = document.getElementById("carte-produit");
-
-carteProduit.innerHTML = "";
-
-for(let key  in produit) {
-    const div = document.createElement("div");
-    const p = document.createElement("p");
-    const small = document.createElement("small");
-    
-    p.textContent=`${key} : `;
-    small.textContent=produit[key];
-    div.append(p , small);
-    
-     div.append(p, small);
-
-    carteProduit.append(div)
-    div.classList.add("flex", "items-center", "gap-2");
-
-    // console.log(key);
-    // console.log(produit[key]);
-}
-
-
+ afficherInformation()
  }
 
  else{
@@ -341,3 +310,46 @@ Section3.hidden=true;
 progress3Number.classList.remove("Style-Number");
 ligne2.classList.remove("ligneBackground");
 })
+
+function afficherInformation() {
+const carteProduit = document.getElementById("carte-produit");
+
+
+
+carteProduit.innerHTML = "";
+
+
+const label={
+ nom : "Nom de la boisson : " ,
+ prix : "Prix de base : " ,
+ Description : "Description" , 
+ Image : "Image du produit : " ,
+ pourcentage : "Pourcentage de réduction" ,
+ date : "Date de fin" ,
+ grains : "Origine des grains" ,
+ niveau : "Niveau de torréfaction" , 
+ Température : "Température" , 
+  taile :     "Les Tailles disponibles " ,
+  option : "Options de lait "
+
+
+}
+
+
+for(let key  in produit) {
+    const div = document.createElement("div");
+    const p = document.createElement("p");
+    const small = document.createElement("small");
+    
+    p.textContent=`${key} : `;
+    small.textContent=label[key];
+    div.append(p , small);
+  
+
+    carteProduit.append(div)
+    div.classList.add("flex", "items-center", "gap-2");
+
+    // console.log(key);
+    // console.log(produit[key]);
+}
+}
