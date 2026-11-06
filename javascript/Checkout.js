@@ -285,3 +285,10 @@ btn.addEventListener("click", function() {
 
 });
 
+
+
+const atelierCafe = document.querySelector("#atelierCafe");
+
+atelierCafe.addEventListener("click", () => {
+    window.location.href = "admin.html";
+});

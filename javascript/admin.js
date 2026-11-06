@@ -389,6 +389,7 @@ Swal.fire({
   confirmButtonColor: "#394B32"
 });
 
+
 productForm.reset();
 
 Section1.hidden=false;
@@ -396,3 +397,5 @@ Section1.hidden=false;
     Section3.hidden=true;
 console.log("hey")
 } );
+
+
