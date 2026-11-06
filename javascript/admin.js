@@ -10,7 +10,7 @@ const btnPrevious2 =document.querySelector("#Previous2");
 
 const btnStep2 = document.querySelector("#Next-Step2");
 
-let Information=[];
+
 
 let produit={ };
 
@@ -19,7 +19,7 @@ const progress2Number = document.getElementById("progress-2");
 const line1 = document.getElementById("line-1")
 btnStep1.addEventListener("click" , ()=>{
    if(  validateStep1()  ) {
-    // Information.push(produit);
+   
  Section1.hidden=true;
 Section2.hidden=false; 
 progress2Number.classList.add("Style-Number");
@@ -41,6 +41,8 @@ const prixInput = document.querySelector("#Prix");
 const imageInput = document.querySelector("#image");
 const percentInput = document.querySelector("#pourcentage");
 const dateInput = document.querySelector("#date");
+const niveauInput = document.querySelector("#niveau");
+const descriptionTexterea = document.querySelector('#description');
 
 
 
@@ -53,7 +55,7 @@ const detailsPromotion =document.querySelector("#details-promotion");
 function  validateStep1() {
 const nomValid = /^[a-zA-ZÀ-ÿ\s'-]{2,50}$/.test(nomInput.value);
 const prixValid = /^(?=.*[1-9])\d+(\.\d{1,2})?$/.test(prixInput.value);
-const imageValid = /^https?:\/\/.+\.(gif|png|jpg|jpeg|webp|svg|psd|bmp|tif)$/i.test(imageInput.value);
+const imageValid = /^https?:\/\/\S+$/i.test(imageInput.value.trim());
 const pourcentageValid = /^(100|[1-9]?\d)(\.\d{1,2})?$/.test(percentInput.value);
 
 const dateInputValid = new Date(dateInput.value);
@@ -122,6 +124,11 @@ if(checkPromos.checked) {
            dateInput.style.borderColor=" red";
          mesagedate.textContent="Date Invalid"
     }
+if(!checkPromos.checked) {
+    delete produit.Pourcentage;
+    delete produit.Date;
+}
+
     //  console.log("salam1" + promotionValid);
     //  console.log("percent" + pourcentageValid)
     //  console.log("date" + dateIsValid)
@@ -132,9 +139,14 @@ if(checkPromos.checked) {
    
     
 }
+
+if(descriptionTexterea.value !== ""){
+produit.Description = descriptionTexterea.value;
+}
+
 // console.log(produit)
 
-// console.log(Information)
+
    return nomValid && prixValid && imageValid &&  promotionValid ;
 }
 
@@ -265,7 +277,7 @@ supplementsSmall.textContent="Veuiller choisir un Element";
    supplementsSmall.style.color="red";
 }
 
-
+produit.Niveau_torrefation = niveauInput.value;
 return origineValid && temperatureValid && taillesValid && laitValid && supplementsValid;
 
 
@@ -285,9 +297,7 @@ const ligne2 = document.getElementById("line-2");
 
 btnStep2.addEventListener("click" , ()=>{
 if(validateStep2()) {
-     Information.push(produit);
-     console.log(produit)
-    //  console.log(Information)
+    
 Section2.hidden=true;
 Section3.hidden=false;
 progress3Number.classList.add("Style-Number");
@@ -313,37 +323,42 @@ ligne2.classList.remove("ligneBackground");
 
 function afficherInformation() {
 const carteProduit = document.getElementById("carte-produit");
-
-
-
 carteProduit.innerHTML = "";
+const label = {
+    Nom_Produit: "Nom de la boisson : ",
+    Prix: "Prix de base : ",
+    Description: "Description : ",
+    Image: "Image du produit : ",
+    Pourcentage: "Pourcentage de réduction : ",
+    Date: "Date de fin : ",
+    Origine: "Origine des grains : ",
+    Niveau_torrefation: "Niveau de torréfaction : ",
+    Temperature: "Température : ",
+    Tailles: "Les tailles disponibles : ",
+    Laits: "Les options de lait : ",
+    Supplements: "Les suppléments : "
+};
+ const img = document.createElement("img");
+    img.src = produit.Image;
+    img.alt = "Image du produit";
+    img.classList.add("w-44", "h-44" , "rounded-lg");
 
-
-const label={
- nom : "Nom de la boisson : " ,
- prix : "Prix de base : " ,
- Description : "Description" , 
- Image : "Image du produit : " ,
- pourcentage : "Pourcentage de réduction" ,
- date : "Date de fin" ,
- grains : "Origine des grains" ,
- niveau : "Niveau de torréfaction" , 
- Température : "Température" , 
-  taile :     "Les Tailles disponibles " ,
-  option : "Options de lait "
-
-
-}
-
+    carteProduit.append(img);
 
 for(let key  in produit) {
     const div = document.createElement("div");
     const p = document.createElement("p");
     const small = document.createElement("small");
-    
-    p.textContent=`${key} : `;
-    small.textContent=label[key];
-    div.append(p , small);
+    const img = document.createElement("img");
+   if (key !== "Image") {
+    p.textContent = label[key];
+    small.textContent = produit[key];
+    div.append(p, small);
+}
+
+p.classList.add("text-lg", "font-bold", "text-gray-700");
+small.classList.add("text-sm", "font-semibold", "text-gray-400");
+    img.classList.add("w-24", "h-24", "object-cover", "rounded-lg");
   
 
     carteProduit.append(div)
@@ -353,3 +368,31 @@ for(let key  in produit) {
     // console.log(produit[key]);
 }
 }
+
+
+
+
+
+
+const ConfirmerButton = document.querySelector('#Confirmer');
+const productForm = document.querySelector("#product-form");
+console.log(ConfirmerButton);
+
+ConfirmerButton.addEventListener("click" , (e)=>{
+e.preventDefault();
+
+Swal.fire({
+  title: "Produit ajouté avec succès !",
+  text: "Votre produit a été ajouté au catalogue.",
+ icon: "success",
+  confirmButtonText: "Parfait !",
+  confirmButtonColor: "#394B32"
+});
+
+productForm.reset();
+
+Section1.hidden=false;
+    Section2.hidden=true;
+    Section3.hidden=true;
+console.log("hey")
+} );
